@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   email: { type: String, required: true },
-  profileImg: String,
+  profileImg: String, // à suppr
   password: { type: String, required: true },
   lastName: String,
   firstName: String,
