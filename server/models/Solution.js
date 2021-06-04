@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const solutionSchema = new Schema({
     solutionName : String, 
     creationDate: String, 
+    originCountry: String,
     channel: [
         {
           type: String,
@@ -13,7 +14,7 @@ const solutionSchema = new Schema({
 integration: [
     {
       type: String,
-      enum: ["Salesforce", "Mailchimp", "Zapier", "Microsoft Teams", "Autre"],
+      enum: ["Salesforce", "Mailchimp", "Zapier", "Autre"],
     },
   ],
   pricing: [
