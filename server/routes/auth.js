@@ -31,28 +31,29 @@ router.post("/signin", (req, res, next) => {
     .catch(next);
 });
 
-router.post("/signup", (req, res, next) => {
-  const { email, password, firstName, lastName } = req.body;
+// /// not useful at the moment 
+// router.post("/signup", (req, res, next) => {
+//   const { email, password, firstName, lastName } = req.body;
 
-  User.findOne({ email })
-    .then((userDocument) => {
-      if (userDocument) {
-        return res.status(400).json({ message: "Email already taken" });
-      }
+//   User.findOne({ email })
+//     .then((userDocument) => {
+//       if (userDocument) {
+//         return res.status(400).json({ message: "Email already taken" });
+//       }
 
-      const hashedPassword = bcrypt.hashSync(password, salt);
-      const newUser = { email, lastName, firstName, password: hashedPassword };
+//       const hashedPassword = bcrypt.hashSync(password, salt);
+//       const newUser = { email, lastName, firstName, password: hashedPassword };
 
-      User.create(newUser)
-        .then((newUserDocument) => {
-          /* Login on signup */
-          req.session.currentUser = newUserDocument._id;
-          res.redirect("/api/auth/isLoggedIn");
-        })
-        .catch(next);
-    })
-    .catch(next);
-});
+//       User.create(newUser)
+//         .then((newUserDocument) => {
+//           /* Login on signup */
+//           req.session.currentUser = newUserDocument._id;
+//           res.redirect("/api/auth/isLoggedIn");
+//         })
+//         .catch(next);
+//     })
+//     .catch(next);
+// });
 
 router.get("/isLoggedIn", (req, res, next) => {
   if (!req.session.currentUser)

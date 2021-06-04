@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nodemon ./bin/www",
+    "build-react": "echo ---- creating react build --- && cd ../client  && npm install && npm run build && cp -r ./build/* ../server/public/ && cd ..",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -15,6 +16,8 @@
     "express": "~4.16.1",
     "express-session": "^1.17.1",
     "mongoose": "^5.12.12",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "multer": "^1.4.2",
+    "multer-storage-cloudinary": "^4.0.0"
   }
 }

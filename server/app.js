@@ -6,7 +6,7 @@ const path = require("path");
 const logger = require("morgan");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-
+const mongoose = require("mongoose");
 const cors = require("cors");
 
 const app = express();
@@ -45,8 +45,11 @@ app.use(
  */
 
 const authRouter = require("./routes/auth");
+const solutionRouter = require("./routes/solutions");
+const userRouter = require("./routes/user");
 
 app.use("/api/auth", authRouter);
+app.use("/api/solutions", solutionRouter);
 
 // 404 Middleware
 app.use((req, res, next) => {
