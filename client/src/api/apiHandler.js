@@ -5,10 +5,18 @@ const service = axios.create({
   withCredentials: true, // Cookie is sent to client when using this service. (used for session)
 });
 
+// function errorHandler(error) {
+//   if (error.response.data) {
+//     console.log("error in api handler !!!!", error.response && error.response.data);
+//     throw error;
+//   }
+//   throw error;
+// }
+
 function errorHandler(error) {
-  if (error.response.data) {
-    console.log(error.response && error.response.data);
-    throw error;
+  if (error.response) {
+    console.log(error.response.data.message);
+    throw error.response.data;
   }
   throw error;
 }

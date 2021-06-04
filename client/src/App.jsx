@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import NavMain from "./components/NavMain";
+import FooterMain from "./components/FooterMain";
 import Home from "./pages/Home";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <ProtectedRoute exact path="/profile" component={Profile} />
       </Switch>
+      <FooterMain></FooterMain>
     </div>
   );
 }

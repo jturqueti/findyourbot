@@ -25,28 +25,9 @@ const NavMain = (props) => {
         <h3 className="logo">App name</h3>
       </NavLink>
       <ul className="nav-list">
-        {context.isLoggedIn && (
-          <React.Fragment>
-            <li>
-              <NavLink to="/profile">
-                {context.user && context.user.email}
-              </NavLink>
-            </li>
-            <li>
-              <p onClick={handleLogout}>Logout</p>
-            </li>
-          </React.Fragment>
-        )}
-        {!context.isLoggedIn && (
-          <React.Fragment>
-            <li>
-              <NavLink to="/signin">Log in</NavLink>
-            </li>
-            <li>
-              <NavLink to="/signup">Create account</NavLink>
-            </li>
-          </React.Fragment>
-        )}
+        <li><NavLink to="/solutions">All bots</NavLink></li>
+        <li><NavLink to="/faq">What is a bot ?</NavLink></li>
+        <li><NavLink to="/browse">Find my solution</NavLink></li>
       </ul>
     </nav>
   );

@@ -22,10 +22,11 @@ class FormSignin extends Component {
     apiHandler
       .signin(this.state)
       .then((data) => {
+        console.log(data)
         this.props.context.setUser(data);
       })
       .catch((error) => {
-        console.log(error);
+        console.log("ERROR :(  !!!!!!!!!!!!", error);
         // Display error message here, if you set the state
       });
   };
