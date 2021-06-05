@@ -1,18 +1,36 @@
-import React from "react";
-import SolutionCard from "./../components/SolutionCard";
+import React, { Component } from 'react';
+import axios from 'axios';
+import LinkSolution from '../components/LinkSolution';
 
-class Solutions extends React.Component {
+//import SolutionCard from "./../components/SolutionCard";
 
+class Solutions extends Component {
     state = {
         solutions: [],
     }
     
+    componentDidMount() {
+      axios
+        .get('http://localhost:5000/api/solutions')
+        .then((response) => {
+          this.setState({
+            solutions: response.data.reverse(),
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  
+
   render() {
     return (
       <div>
         <h1>Our solutions :</h1>
-        <div className="solutionsGrid">
-            <SolutionCard/>
+        <div>
+        {this.state.solutions.map((solutionFromArray) => {
+          return <LinkSolution key={solutionFromArray._id} solution={solutionFromArray} />;
+        })}
         </div>
       </div>
     );

@@ -27,7 +27,7 @@ const NavMain = (props) => {
       <ul className="nav-list">
         <li><NavLink to="/solutions">All bots</NavLink></li>
         <li><NavLink to="/faq">What is a bot ?</NavLink></li>
-        <li><NavLink to="/browse">Find my solution</NavLink></li>
+        <li><NavLink to="/browser">Find my solution</NavLink></li>
       </ul>
     </nav>
   );
