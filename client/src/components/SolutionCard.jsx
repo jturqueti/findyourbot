@@ -3,18 +3,19 @@ import { Link } from "react-router-dom";
 
 
 const SolutionCard = (props) => {
-  const { solution } =
+  const { _id, logo, name } =
     props;
 
   return (
-    <Link className="SolutionLink" to={`/solutions/${solution._id}`}>
+    <div className="" >
         <div className="SolutionCard">
             <div className="solutionLogo">
-                <img src={solution.logo} alt={solution.name} />
+                <img src={logo} alt={name} />
             </div>
-            {solution.name}
+            {name}
         </div>
-    </Link>
+    </div>
+    // <Link to={`/solutions/${solution._id}`}></Link>
   );
 };
 
