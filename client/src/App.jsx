@@ -9,6 +9,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/Profile";
 import Solutions from "./pages/Solutions";
 import SolutionDetails from "./pages/SolutionDetails";
+import CreateSolution from "./pages/CreateSolution";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/solutions" component={Solutions} />
         <Route exact path="/solutions/:id" component={SolutionDetails} />
+        <Route exact path="/create" component={CreateSolution} />
         <ProtectedRoute exact path="/profile" component={Profile} />
       </Switch>
       <FooterMain />
