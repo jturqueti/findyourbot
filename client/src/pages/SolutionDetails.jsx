@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import SolutionCard from '../components/SolutionCard'
 import { Link } from 'react-router-dom';
 
 class SolutionDetails extends Component {
@@ -23,8 +22,20 @@ class SolutionDetails extends Component {
       return(
         <div>
           <h1>{this.state.solutionName}</h1>
-          <p>{this.state.pricing}</p>
-          <Link to={'/solutions'}>Back to projects</Link>
+          <p>Date de création de l'entreprise : {this.state.creationDate}</p>
+          <p>Pays d'origine : {this.state.originCountry}</p>
+          <p>Channels disponibles : {this.state.channel}</p>
+          <p>Intégrations proposées : {this.state.integration}</p>
+          <p>Pricing : {this.state.pricing}</p>
+          <p>Services support et construction :{this.state.additionalServices}</p>
+          <p>NLP propriétaire : {this.state.nlpProp}</p>
+          <p>Bot multilangage : {this.state.multiLanguages}</p>
+          <p>NLP disponibles : {this.state.languagesNLP}</p>
+          <p>Type de clients : {this.state.clientType}</p>
+          <p><a href={this.state.companyURL}>{this.state.companyURL}</a></p>
+          <img src={this.state.logo} alt={this.state.solutionName} />
+
+          <Link to={'/solutions'}>Retour à la liste</Link>
         </div>
       )
     }
