@@ -29,7 +29,7 @@ class SolutionDetails extends Component {
           <p>Pricing : {this.state.pricing}</p>
           <p>Services support et construction :{this.state.additionalServices}</p>
           <p>NLP propriétaire : {this.state.nlpProp}</p>
-          <p>Bot multilangage : {this.state.multiLanguages}</p>
+          <p>Bot multilanguage : {this.state.multiLanguages}</p>
           <p>NLP disponibles : {this.state.languagesNLP}</p>
           <p>Type de clients : {this.state.clientType}</p>
           <p><a href={this.state.companyURL}>{this.state.companyURL}</a></p>
