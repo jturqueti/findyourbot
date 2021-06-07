@@ -10,6 +10,7 @@ import Profile from "./pages/Profile";
 import Solutions from "./pages/Solutions";
 import SolutionDetails from "./pages/SolutionDetails";
 import CreateSolution from "./pages/CreateSolution";
+import UpdateSolution from "./pages/UpdateSolution";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/solutions" component={Solutions} />
         <Route exact path="/solutions/:id" component={SolutionDetails} />
         <ProtectedRoute exact path="/create" component={CreateSolution} />
+        <ProtectedRoute exact path="/update" component={UpdateSolution} />
         <ProtectedRoute exact path="/profile" component={Profile} />
       </Switch>
       <FooterMain />
