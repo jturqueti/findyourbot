@@ -2,11 +2,16 @@ import React from "react";
 import "../styles/profile.css";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import SearchBar from '../components/SearchBar';
 
 class Profile extends React.Component {
-    state = {
-        solutions: [],
+  constructor(){
+    super();
+    this.state = {
+      solutions: [],
+      searchValue:'',
     }
+  }
 
     componentDidMount() {
         axios
@@ -21,43 +26,81 @@ class Profile extends React.Component {
           });
       }
 
-  showContacts() {
-    return this.state.solutions.map((eachSolution, index) => {
-      return (
-        <tr key={index}>
-            <td>{eachSolution.solutionName}</td>
-          <td>
-            <img
-              className="img-fluid img-thumbnail celebImg"
-              src={eachSolution.logo}
-              alt={eachSolution.solutionName}
-            />
-                      </td>
-          <td>
-            <button
-              className="btn btn-secondary"
-              onClick={() => this.deleteContact(index)}
-            >
-              Delete
-            </button>
-          </td>
-        </tr>
-      );
+      handleSearchValue = (value) => {
+        this.setState({
+          searchValue: value,
+        });
+      };
+
+  showSolutions() {
+    const filteredSolutions = this.state.solutions.filter((solutions) => {
+      return solutions.solutionName
+      .toLowerCase()
+      .includes(this.state.searchValue.toLowerCase())
     });
+
+    if ( this.state.searchValue === ''){
+      return this.state.solutions.map((eachSolution, index) => {
+        return (
+          <tr key={index}>
+              <td>{eachSolution.solutionName}</td>
+            <td>
+              <img
+                className="img-fluid img-thumbnail celebImg"
+                src={eachSolution.logo}
+                alt={eachSolution.solutionName}
+              />
+             </td>
+            <td>
+              <button
+                className="btn btn-secondary"
+                onClick={() => this.deleteSolution
+                  (index)}
+              >
+                Delete
+              </button>
+              <Link>Update</Link>
+            </td>
+          </tr>
+        );
+      });
+    }  else {
+      return filteredSolutions.map((eachSolution, index) => {
+        return (
+          <tr key={index}>
+              <td>{eachSolution.solutionName}</td>
+            <td>
+              <img
+                className="img-fluid img-thumbnail celebImg"
+                src={eachSolution.logo}
+                alt={eachSolution.solutionName}
+              />
+             </td>
+            <td>
+              <button
+                className="btn btn-secondary"
+                onClick={() => this.deleteSolution
+                  (index)}
+              >
+                Delete
+              </button>
+              <Link>Update</Link>
+            </td>
+          </tr>
+        );
+      });
+    } 
   }
 
-  // Iteration 3 | Sort Contacts By Name And Popularity
-
-  sortContacts(field) {
+  sortSolutions(field) {
     // Create a different compareFunction based on "field" value
     let compareFunction;
     if (field === "solutionName") {
       compareFunction = (a, b) => (a.solutionName > b.solutionName ? 1 : -1);
-    } else if (field === "originCountry") {
-      compareFunction = (a, b) => b.originCountry - a.originCountry;
-    }
+    } else if (field === "creationDate") {
+      compareFunction = (a, b) => b.creationDate - a.creationDate;
+    } 
 
-    // this.state.contacts.slice() create a copy of the array (this.state.allContacts)
     this.setState({
         solutions: this.state.solutions
         .slice()
@@ -65,41 +108,35 @@ class Profile extends React.Component {
     });
   }
 
-  // Iteration 4 | Remove Contacts
-  deleteContact(theIndexOfTheOneToBeDeleted) {
-    // Method 1
-    // let copyOfContactsArr = [...this.state.firstVisibleContacts];
-    // copyOfContactsArr.splice(theIndexOfTheOneToBeDeleted, 1);
-    // this.setState({
-    //   firstVisibleContacts: copyOfContactsArr
-    // })
-
-    //  Method 2
+  deleteSolution(theIndexOfTheOneToBeDeleted) {
     this.setState({
-      // filter creates a copy
-      // in "(c,i)", "c" is the current contact, "i" is the current index
       solutions: this.state.solutions.filter(
         (c, i) => i !== theIndexOfTheOneToBeDeleted
       ),
     });
   }
+
+
   render() {
+
     return (
       <div className="container-fluid">
-      
+      <SearchBar handleChange={this.handleSearchValue}
+            value={this.state.searchValue} />
 
         <h1>
 Espace Admin          
         </h1>
+
         <button
           className="btn btn-primary"
-          onClick={() => this.sortContacts("originCountry")}
+          onClick={() => this.sortSolutions("creationDate")}
         >
-          Sort by country of origin
+          Date création
         </button>
         <button
           className="btn btn-success"
-          onClick={() => this.sortContacts("solutionName")}
+          onClick={() => this.sortSolutions("solutionName")}
         >
           Sort by name
         </button>
@@ -110,7 +147,7 @@ Espace Admin
               <th scope="col">Nom de la solution</th>
             </tr>
           </thead>
-          <tbody>{this.showContacts()}</tbody>
+          <tbody>{this.showSolutions()}</tbody>
         </table>
       </div>
     );
