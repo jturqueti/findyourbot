@@ -25,7 +25,9 @@ router.get("/:id", (req, res, next)=>{
 // -------------------------------------------------------
 // Add Auth !!!!!!
 router.post("/", uploader.single("logo"), (req, res, next) => {
+  console.log(req.body)
     const newSolution = { ...req.body };
+    
     if (req.file) {
       newSolution.logo = req.file.path;
     }

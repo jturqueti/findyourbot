@@ -11,6 +11,7 @@ import Solutions from "./pages/Solutions";
 import SolutionDetails from "./pages/SolutionDetails";
 import CreateSolution from "./pages/CreateSolution";
 
+
 function App() {
   return (
     <div className="App">
