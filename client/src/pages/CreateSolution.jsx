@@ -98,6 +98,7 @@ class CreateSolution extends Component {
               Country of origin
             </label>
             <input
+            type="text"
               id="originCountry"
               name="originCountry"
               className="Form__input"
@@ -128,7 +129,7 @@ class CreateSolution extends Component {
               size="7"
             >
               <option value="" disabled>
-                Sélectionner une ou plusieurs canaux
+                Sélectionner un ou plusieurs canaux
               </option>
               <option value="Webchat">Webchat</option>
               <option value="Facebook Messenger">Facebook Messenger</option>

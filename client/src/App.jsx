@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/solutions" component={Solutions} />
         <Route exact path="/solutions/:id" component={SolutionDetails} />
-        <Route exact path="/create" component={CreateSolution} />
+        <ProtectedRoute exact path="/create" component={CreateSolution} />
         <ProtectedRoute exact path="/profile" component={Profile} />
       </Switch>
       <FooterMain />
