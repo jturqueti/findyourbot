@@ -150,13 +150,13 @@ Espace Admin
         <br></br>
 
         <button
-          className="btn btn-primary"
+          className="btn btn-sort"
           onClick={() => this.sortSolutions("originCountry")}
         >
           Date création
         </button>
         <button
-          className="btn btn-success"
+          className="btn btn-sort"
           onClick={() => this.sortSolutions("solutionName")}
         >
           Sort by name

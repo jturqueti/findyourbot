@@ -85,15 +85,21 @@ class ProspectList extends React.Component {
       return filteredProspect.map((eachSolution, index) => {
         return (
           <tr key={index}>
-              <td>{eachSolution.companyName}</td>
+                <td>{eachSolution.companyName}</td>
+              <td>{eachSolution.firstName}</td>
+              <td>{eachSolution.lastName}</td>
+              <td>{eachSolution.email}</td>
+              <td>{eachSolution.clientType}</td>
+              <td>{eachSolution.budget}</td>
+              <td>{eachSolution.channel}</td>
+              <td>{eachSolution.languagesNLP}</td>
             <td>
             <button
                 className="btn btn-secondary"
                 onClick={(e) => this.deleteSolution
                   (eachSolution._id, e)}
-                // onClick={this.deleteSolution}
               >
-                Delete
+                Supprimer
               </button></td>
               <td>
               <Link to={`/update/${eachSolution._id}`}>Update</Link>
@@ -110,9 +116,13 @@ class ProspectList extends React.Component {
     let compareFunction;
     if (field === "companyName") {
       compareFunction = (a, b) => (a.companyName > b.companyName ? 1 : -1);
-    } else if (field === "lastName") {
+    }  else if (field === "lastName") {
       compareFunction = (a, b) => (a.lastName > b.lastName ? 1 : -1)
-    } 
+    } else if (field === "budget") {
+        compareFunction = (a, b) => (a.budget > b.budget ? 1 : -1)
+      } else if (field === "clientType") {
+        compareFunction = (a, b) => (a.clientType > b.clientType ? 1 : -1)
+      } 
 
     this.setState({
         prospects: this.state.prospects
@@ -131,7 +141,7 @@ class ProspectList extends React.Component {
         <h1>
 Espace Admin          
         </h1>
-
+<p>Rechercher par nom de société: </p>
         <SearchBar handleChange={this.handleSearchValue}
             value={this.state.searchValue} />
 
@@ -139,18 +149,29 @@ Espace Admin
         <br></br>
 
         <button
-          className="btn btn-primary"
+          className="btn btn-sort"
           onClick={() => this.sortSolutions("companyName")}
         >
-          Trier par société
+          Trier par nom de société
         </button>
         <button
-          className="btn btn-success"
-          onClick={() => this.sortSolutions("firstName")}
+          className="btn btn-sort"
+          onClick={() => this.sortSolutions("lastName")}
         >
-          Trier par nom
+          Trier par nom du contact
         </button>
-        
+        <button
+          className="btn btn-sort"
+          onClick={() => this.sortSolutions("budget")}
+        >
+          Trier par budget
+        </button>
+        <button
+          className="btn btn-sort"
+          onClick={() => this.sortSolutions("clientType")}
+        >
+          Trier par taille d'entreprise
+        </button>
         
         <div className="ctadiv"><Link className="cta" to={'/profile'}>Retour gestion solutions</Link></div>
 

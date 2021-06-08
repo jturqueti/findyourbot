@@ -27,6 +27,21 @@ router.post("/",  (req, res, next) => {
         .catch(next);
 });
 
+router.delete("/:id", (req, res, next) => {
+  ProspectModel.findById(req.params.id)
+    .then((solutionFromDB) => {
+      if (!solutionFromDB) {
+        return res.status(404).json({ message: "Solution not found !!!" });
+      }
+
+      ProspectModel.findByIdAndDelete(req.params.id)
+        .then(() => {
+          return res.sendStatus(204);
+        })
+        .catch(next);
+    })
+    .catch(next);
+});
 
 
 module.exports = router;
