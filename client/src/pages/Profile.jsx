@@ -5,62 +5,72 @@ import { Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 
 class Profile extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       solutions: [],
       searchValue:'',
     }
   }
 
-    componentDidMount() {
-        axios
-          .get('http://localhost:5000/api/solutions')
-          .then((response) => {
-            this.setState({
-              solutions: response.data.reverse(),
-            });
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-    }
-
-    deleteSolution(id, e){  
+  componentDidMount() {
       axios
-      .delete(`http://localhost:5000/api/solutions/${id}`)  
-        .then(res => {  
-          console.log(res);  
-          console.log(res.data);  
-      
-          const solutions = this.state.solutions.filter(item => item.id !== id);  
-          this.setState({ solutions });  
-        })  
+        .get('http://localhost:5000/api/solutions')
+        .then((response) => {
+          this.setState({
+            solutions: response.data.reverse(),
+          });
+        })
         .catch((error) => {
-                    console.log(error);
-                  });
-      
-    }  
+          console.log(error);
+        });
+  }
 
-
-    // deleteSolution(solution) {
-  //   const id = this.props.match.params.id;
-  //   axios
-  //   .delete("http://localhost:5000/api/solutions/" + id)
-  //   .then((response) => {
-  //     const data = this.state.data.filter(i => i.id !== solution.id)
-  //     this.setState({
-  //       // solutions: this.state.solutions.filter((solution) => {
-  //       //    return solution._id !== solution;
-  //       // }),
-  //       data
-  //     });
-  //   })
-  //   .catch((error) => {
-  //           console.log(error);
-  //         });
-    
+  // deleteSolution(index) {
+  //   this.setState({
+  //    solutions: this.state.solutions.filter((c, i) => i !== index)
+  //   });
   // }
+
+  deleteSolution(index) {
+    axios
+      .delete('http://localhost:5000/api/solutions/' + index)
+      .then((response) => {
+        this.setState({
+          solutions: this.state.solutions.filter((c, i) => i !== index)
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+}
+
+  // deleteSolution = (event) => {
+
+  //   let id = this.props.match.params.id;
+  //   console.log(id)
+
+  //   let updatedSolutions = [];
+
+  //   axios
+  //   .delete(`http://localhost:5000/api/solutions/` + id, updatedSolutions)  
+  //     .then(res => {  
+  //       console.log(res);  
+  //       console.log(res.data);
+  //       this.props.history.slice("/solutions/" + id);
+  //       // const solutions = this.state.solutions.filter(item => item.id._id !== id._id);  
+  //       // this.setState({ solutions: solutions });  
+  //       // const solutions = this.state.solutions.filter(item => item.id !== id);  
+  //       // this.setState({ solutions: this.state.solutions.filter((solution) => {
+  //       //   return solution._id !== solution; })  
+  //     })  
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }
+
+
+  
 
     handleSearchValue = (value) => {
       this.setState({
@@ -93,7 +103,8 @@ class Profile extends React.Component {
               <button
                 className="btn btn-secondary"
                 onClick={() => this.deleteSolution
-                  (index)}
+                  (eachSolution._id)}
+                // onClick={this.deleteSolution}
               >
                 Delete
               </button></td>
@@ -120,7 +131,8 @@ class Profile extends React.Component {
               <button
                 className="btn btn-secondary"
                 onClick={() => this.deleteSolution
-                  (index)}
+                  (eachSolution._id)}
+                // onClick={this.deleteSolution}
               >
                 Delete
               </button></td>
