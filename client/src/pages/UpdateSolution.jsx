@@ -104,7 +104,7 @@ class CreateSolution extends Component {
     console.log(updateSolution);
 
     axios
-      .patch(`http://localhost:5000/api/solutions/${id}`, updateSolution)
+      .patch(`http://localhost:5000/api/solutions/${this.props.match.params}`, updateSolution)
       .then((response) => {
         this.props.history.push("/solutions");
         console.log(response.data);

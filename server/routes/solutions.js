@@ -81,11 +81,14 @@ router.post("/", uploader.single("logo"), (req, res, next) => {
       .catch(next);
   });
 
-// créer nouvelle solution
-// modif solution
-// delete solution
-
-
+  // en cours ///
+router.post("/browser", (req, res, next)=>{
+SolutionModel.find({q1: req.body.q1, q2: req.body.q2})
+.then((infoDB)=>{
+  return 
+})
+}
+)
 
 
 module.exports = router;
