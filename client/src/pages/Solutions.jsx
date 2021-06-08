@@ -52,6 +52,7 @@ class Solutions extends Component {
       if ( this.state.searchValue === ''){
         return this.state.solutions.map((eachSolution, index) => {
           return (
+            <div> <Link to={`/solutions/${eachSolution._id}`}>
             <tr key={index}>
                 <td>{eachSolution.solutionName}</td>
                 <td>
@@ -64,14 +65,15 @@ class Solutions extends Component {
                   alt={eachSolution.solutionName}
                 />
                 </td>
-                <td><Link to={`/solutions/${eachSolution._id}`}>Aller sur la fiche {eachSolution.solutionName}</Link></td>
             </tr>
-            
+            </Link>
+            </div>
           );
         });
       }  else {
         return filteredSolutions.map((eachSolution, index) => {
           return (
+            <div> <Link to={`/solutions/${eachSolution._id}`}>
             <tr key={index}>
                 <td>{eachSolution.solutionName}</td>
               <td>
@@ -84,8 +86,9 @@ class Solutions extends Component {
                   alt={eachSolution.solutionName}
                 />
                </td>
-               <td><Link to={`/solutions/${eachSolution._id}`}>Aller sur la fiche {eachSolution.solutionName}</Link></td>
             </tr>
+            </Link>
+            </div>
           );
         });
       } 

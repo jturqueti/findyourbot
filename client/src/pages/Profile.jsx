@@ -51,16 +51,18 @@ class Profile extends React.Component {
                 alt={eachSolution.solutionName}
               />
              </td>
-            <td>
+             <td>
               <button
                 className="btn btn-secondary"
                 onClick={() => this.deleteSolution
                   (index)}
               >
                 Delete
-              </button>
+              </button></td>
+              <td>
               <Link>Update</Link>
             </td>
+            <td><Link to={`/solutions/${eachSolution._id}`}>Voir la fiche</Link></td>
           </tr>
         );
       });
@@ -83,9 +85,11 @@ class Profile extends React.Component {
                   (index)}
               >
                 Delete
-              </button>
+              </button></td>
+              <td>
               <Link>Update</Link>
             </td>
+            <td><Link to={`/solutions/${eachSolution._id}`}>Voir la fiche</Link></td>
           </tr>
         );
       });

@@ -8,6 +8,7 @@ import Signup from "./pages/Signup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/Profile";
 import Solutions from "./pages/Solutions";
+import Browser from "./pages/Browser";
 import SolutionDetails from "./pages/SolutionDetails";
 import CreateSolution from "./pages/CreateSolution";
 import UpdateSolution from "./pages/UpdateSolution";
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/solutions" component={Solutions} />
         <Route exact path="/solutions/:id" component={SolutionDetails} />
+        <Route exact path="/browser" component={Browser} />
         <ProtectedRoute exact path="/create" component={CreateSolution} />
         <ProtectedRoute exact path="/update" component={UpdateSolution} />
         <ProtectedRoute exact path="/profile" component={Profile} />
