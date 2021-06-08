@@ -45,40 +45,11 @@ class Profile extends React.Component {
       });
 }
 
-  // deleteSolution = (event) => {
-
-  //   let id = this.props.match.params.id;
-  //   console.log(id)
-
-  //   let updatedSolutions = [];
-
-  //   axios
-  //   .delete(`http://localhost:5000/api/solutions/` + id, updatedSolutions)  
-  //     .then(res => {  
-  //       console.log(res);  
-  //       console.log(res.data);
-  //       this.props.history.slice("/solutions/" + id);
-  //       // const solutions = this.state.solutions.filter(item => item.id._id !== id._id);  
-  //       // this.setState({ solutions: solutions });  
-  //       // const solutions = this.state.solutions.filter(item => item.id !== id);  
-  //       // this.setState({ solutions: this.state.solutions.filter((solution) => {
-  //       //   return solution._id !== solution; })  
-  //     })  
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }
-
-
-  
-
     handleSearchValue = (value) => {
       this.setState({
         searchValue: value,
       });
     };
-
-      
 
   showSolutions() {
     const filteredSolutions = this.state.solutions.filter((solutions) => {
@@ -162,39 +133,6 @@ class Profile extends React.Component {
     });
   }
 
-  // deleteSolution = (thisSolution) => {
-  //   axios
-  //     .delete("http://localhost:5000/api/solutions/" + eachSolution._id)
-  //     .then((response) => {
-  //       this.setState({
-  //         solutions: this.state.solutions.filter((solution) => {
-  //           return solution._id !== solutionId;
-  //         }),
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-
-  // deleteSolution = (thisSolution) => {
-  //   axios
-  //     .delete("http://localhost:5000/api/solutions/" + eachSolution._id)
-  //     .then((response) => {
-  //       this.setState({
-  //         solutions: this.state.solutions.filter((solution) => {
-  //           return solution._id !== solutionId;
-  //         }),
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-
-  
-
-
   render() {
 
     return (
@@ -224,7 +162,7 @@ Espace Admin
           Sort by name
         </button>
         <div className="ctadiv"><Link className="cta" to={'/create'}>Créer une solution</Link></div>
-        <div className="ctadiv"><Link className="cta" to={'/profile/prospects'}>Prospects</Link></div>
+        <div className="ctadiv"><Link className="cta" to={'/prospect'}>Liste des prospects</Link></div>
 
         <table className="table">
           <thead className="thead-light">

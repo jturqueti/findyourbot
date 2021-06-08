@@ -67,7 +67,7 @@ class CreateProspect extends Component {
     axios
       .post("http://localhost:5000/api/prospect/", newProspect)
       .then((response) => {
-        this.props.history.push("/profile/prospects");
+        this.props.history.push("/solutions");
         console.log(response.data);
       })
       .catch((error) => {
@@ -119,7 +119,7 @@ class CreateProspect extends Component {
               value={this.state.budget}
               className="Form__input"
             >
-              <option value="Gratuit">Gratuit</option>
+              <option value="Gratuit">Pro bono</option>
               <option value="€">€</option>
               <option value="€€">€€</option>
               <option value="€€€">€€€</option>
@@ -128,7 +128,7 @@ class CreateProspect extends Component {
 
           <br></br>
 
-          <h2>Clientèle visée</h2>
+          <h2>Type d'oganisation</h2>
 
           <br></br>
 
@@ -144,24 +144,7 @@ class CreateProspect extends Component {
 
           <br></br>
 
-          <h2>Informations de contact (nom, email, société)</h2>
-
-          <div className="Form__field">
-            <label className="Form__label" htmlFor="email">
-              Email
-            </label>
-            <br></br>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              className="Form__input"
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-          </div>
-
-          <br></br>
+          <h2>Vos informations</h2>
 
           <div className="Form__field">
             <label className="Form__label" htmlFor="companyName">
@@ -199,7 +182,7 @@ class CreateProspect extends Component {
 
           <div className="Form__field">
             <label className="Form__label" htmlFor="lastName">
-              Nom de famille
+              Nom
             </label>
             <br></br>
             <input
@@ -212,6 +195,24 @@ class CreateProspect extends Component {
             />
           </div>
           <br></br>
+
+          <div className="Form__field">
+            <label className="Form__label" htmlFor="email">
+              Email professionnel
+            </label>
+            <br></br>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              className="Form__input"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </div>
+
+          <br></br>
+
           <button>Submit</button>
         </form>
       </div>

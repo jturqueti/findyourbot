@@ -12,7 +12,7 @@ import Browser from "./pages/Browser";
 import SolutionDetails from "./pages/SolutionDetails";
 import CreateSolution from "./pages/CreateSolution";
 import UpdateSolution from "./pages/UpdateSolution";
-
+import ProspectList from "./pages/ProspectList"
 
 function App() {
   return (
@@ -28,6 +28,7 @@ function App() {
         <ProtectedRoute exact path="/create" component={CreateSolution} />
         <ProtectedRoute exact path="/update/:id" component={UpdateSolution} />
         <ProtectedRoute exact path="/profile" component={Profile} />
+        <ProtectedRoute exact path="/prospect" component={ProspectList} />
       </Switch>
       <FooterMain />
     </div>
