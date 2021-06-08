@@ -24,13 +24,51 @@ class Profile extends React.Component {
           .catch((error) => {
             console.log(error);
           });
-      }
+    }
 
-      handleSearchValue = (value) => {
-        this.setState({
-          searchValue: value,
-        });
-      };
+    deleteSolution(id, e){  
+      axios
+      .delete(`http://localhost:5000/api/solutions/${id}`)  
+        .then(res => {  
+          console.log(res);  
+          console.log(res.data);  
+      
+          const solutions = this.state.solutions.filter(item => item.id !== id);  
+          this.setState({ solutions });  
+        })  
+        .catch((error) => {
+                    console.log(error);
+                  });
+      
+    }  
+
+
+    // deleteSolution(solution) {
+  //   const id = this.props.match.params.id;
+  //   axios
+  //   .delete("http://localhost:5000/api/solutions/" + id)
+  //   .then((response) => {
+  //     const data = this.state.data.filter(i => i.id !== solution.id)
+  //     this.setState({
+  //       // solutions: this.state.solutions.filter((solution) => {
+  //       //    return solution._id !== solution;
+  //       // }),
+  //       data
+  //     });
+  //   })
+  //   .catch((error) => {
+  //           console.log(error);
+  //         });
+    
+  // }
+
+    handleSearchValue = (value) => {
+      this.setState({
+        searchValue: value,
+      });
+    };
+
+      
 
   showSolutions() {
     const filteredSolutions = this.state.solutions.filter((solutions) => {
@@ -112,13 +150,37 @@ class Profile extends React.Component {
     });
   }
 
-  deleteSolution(theIndexOfTheOneToBeDeleted) {
-    this.setState({
-      solutions: this.state.solutions.filter(
-        (c, i) => i !== theIndexOfTheOneToBeDeleted
-      ),
-    });
-  }
+  // deleteSolution = (thisSolution) => {
+  //   axios
+  //     .delete("http://localhost:5000/api/solutions/" + eachSolution._id)
+  //     .then((response) => {
+  //       this.setState({
+  //         solutions: this.state.solutions.filter((solution) => {
+  //           return solution._id !== solutionId;
+  //         }),
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+
+  // deleteSolution = (thisSolution) => {
+  //   axios
+  //     .delete("http://localhost:5000/api/solutions/" + eachSolution._id)
+  //     .then((response) => {
+  //       this.setState({
+  //         solutions: this.state.solutions.filter((solution) => {
+  //           return solution._id !== solutionId;
+  //         }),
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+
+  
 
 
   render() {
