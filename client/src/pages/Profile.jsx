@@ -32,12 +32,12 @@ class Profile extends React.Component {
   //   });
   // }
 
-  deleteSolution(index) {
+  deleteSolution(id) {
     axios
-      .delete('http://localhost:5000/api/solutions/' + index)
+      .delete('http://localhost:5000/api/solutions/' + id)
       .then((response) => {
         this.setState({
-          solutions: this.state.solutions.filter((c, i) => i !== index)
+          solutions: this.state.solutions.filter((item) => item.id !== id)
         });
       })
       .catch((error) => {
