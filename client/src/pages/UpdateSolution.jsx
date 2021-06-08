@@ -9,7 +9,7 @@ class CreateSolution extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      solutionName: this.solutionName,
+      solutionName: "",
       creationDate: "",
       originCountry: "",
       channel: [
@@ -147,8 +147,8 @@ class CreateSolution extends Component {
         axios
           .patch("http://localhost:5000/api/solutions/" + id, updateValues)
           .then((response) => {
-            // console.log(response.data);
-            this.props.history.push("/solutions");
+            console.log(response.data);
+            this.props.history.push("/solutions/" + id);
           })
           .catch((error) => {
             console.log(error);

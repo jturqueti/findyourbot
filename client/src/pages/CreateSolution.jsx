@@ -76,7 +76,7 @@ class CreateSolution extends Component {
     this.setState({
           [name]: value,
         });
-      };
+  };
 
   
 
