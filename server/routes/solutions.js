@@ -84,11 +84,15 @@ router.post("/", uploader.single("logo"), (req, res, next) => {
   // en cours ///
 router.post("/browser", (req, res, next)=>{
 SolutionModel.find({q1: req.body.q1, q2: req.body.q2})
-.then((infoDB)=>{
-  return 
+.then((solutionFromDB)=>{
+  res.render("solutions",{
+    q1: req.params.q1, 
+    q2: req.params.q2, 
+    q3: req.params.q3, 
+  }) 
 })
 }
-)
+) 
 
 
 module.exports = router;
