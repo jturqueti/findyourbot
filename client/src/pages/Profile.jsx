@@ -32,12 +32,12 @@ class Profile extends React.Component {
   //   });
   // }
 
-  deleteSolution(id) {
+  deleteSolution(id, e) {
     axios
       .delete('http://localhost:5000/api/solutions/' + id)
       .then((response) => {
         this.setState({
-          solutions: this.state.solutions.filter((item) => item.id !== id)
+        solutions: this.state.solutions.filter((item) => item._id !== id)
         });
       })
       .catch((error) => {
@@ -102,8 +102,8 @@ class Profile extends React.Component {
              <td>
               <button
                 className="btn btn-secondary"
-                onClick={() => this.deleteSolution
-                  (eachSolution._id)}
+                onClick={(e) => this.deleteSolution
+                  (eachSolution._id, e)}
                 // onClick={this.deleteSolution}
               >
                 Delete
@@ -128,10 +128,10 @@ class Profile extends React.Component {
               />
              </td>
             <td>
-              <button
+            <button
                 className="btn btn-secondary"
-                onClick={() => this.deleteSolution
-                  (eachSolution._id)}
+                onClick={(e) => this.deleteSolution
+                  (eachSolution._id, e)}
                 // onClick={this.deleteSolution}
               >
                 Delete
@@ -151,8 +151,8 @@ class Profile extends React.Component {
     let compareFunction;
     if (field === "solutionName") {
       compareFunction = (a, b) => (a.solutionName > b.solutionName ? 1 : -1);
-    } else if (field === "creationDate") {
-      compareFunction = (a, b) => b.creationDate - a.creationDate;
+    } else if (field === "originCountry") {
+      compareFunction = (a, b) => (a.originCountry > b.originCountry ? 1 : -1)
     } 
 
     this.setState({
@@ -208,7 +208,7 @@ Espace Admin
 
         <button
           className="btn btn-primary"
-          onClick={() => this.sortSolutions("creationDate")}
+          onClick={() => this.sortSolutions("originCountry")}
         >
           Date création
         </button>
