@@ -26,7 +26,7 @@ const animatedComponents = makeAnimated();
 // }
 
 const options = [
-  { value: 'Webchat', label: {x:'Français'} },
+  { value: 'Webchat', label: {x:'Webchat'} },
   { value: 'Facebook Messenger', label: {x:'Facebook Messenger'} },
   { value: 'WhatsApp', label: {x:'WhatsApp'} },
   { value: 'Microsoft Teams', label: {x:'Microsoft Teams'} },

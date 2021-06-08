@@ -2,32 +2,33 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const prospectSchema = new Schema({
-    languagesNLP: [
-        {
-          type: String,
-          enum: ["Français", "Anglais", "Allemand", "Espagnol", "Autre"],
-        },
-      ],
-    budget: [
-        {
-          type: String,
-          enum: ["Gratuit", "€", "€€", "€€€"],
-        },
-      ],  
-      clientType: [
-        {
-          type: String,
-          enum: ["Particulier", "TPE-PME", "Grande Entreprise", "Administration publique"],
-        },
-      ],
+  channel: [
+    {
+      type: String,
+      enum: ["Webchat", "Facebook Messenger", "WhatsApp", "Microsoft Teams", "Bot vocal", "Autre"],
+    },
+  ],
 
-  needServices: Boolean, 
+  budget: [
+      {
+        type: String,
+        enum: ["Gratuit", "€", "€€", "€€€"],
+      },
+    ],  
+
+  clientType: [
+    {
+      type: String,
+      enum: ["Particulier", "TPE-PME", "Grande Entreprise", "Administration publique"],
+    },
+  ],
+
   email: { type: String, required: true },
-  companyName:String,
-  lastName: String,
+  companyName: String,
   firstName: String,
+  lastName: String,
 });
 
-const Prospect = mongoose.model("Prospect", prospectSchema);
+const ProspectModel = mongoose.model("Prospect", prospectSchema);
 
-module.exports = Prospect;
+module.exports = ProspectModel;

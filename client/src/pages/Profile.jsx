@@ -199,12 +199,17 @@ class Profile extends React.Component {
 
     return (
       <div className="container-fluid">
-      <SearchBar handleChange={this.handleSearchValue}
-            value={this.state.searchValue} />
+      
 
         <h1>
 Espace Admin          
         </h1>
+
+        <SearchBar handleChange={this.handleSearchValue}
+            value={this.state.searchValue} />
+
+        <br></br>
+        <br></br>
 
         <button
           className="btn btn-primary"
@@ -219,6 +224,8 @@ Espace Admin
           Sort by name
         </button>
         <div className="ctadiv"><Link className="cta" to={'/create'}>Créer une solution</Link></div>
+        <div className="ctadiv"><Link className="cta" to={'/profile/prospects'}>Prospects</Link></div>
+
         <table className="table">
           <thead className="thead-light">
             <tr>

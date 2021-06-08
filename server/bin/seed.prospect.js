@@ -1,22 +1,30 @@
 const path = require("path");
 require("dotenv").config({ path: path.join(__dirname, "../.env") });
 require("../config/dbConnection");
-const Prospect = require("../models/Prospect");
+const ProspectModel = require("../models/Prospect");
 
 const prospects = [
 {
-languagesNLP: ["Français"],
-budget: ["Gratuit"],  
+  channel: ["WhatsApp"],
+  budget: ["Gratuit"],  
   clientType: ["TPE-PME"],
-needServices: false, 
-email: "yoyo@gmail.com",
-companyName:"chez moimoi",
-lastName: "Jacquo",
-firstName: "Dumont",
+  email: "yoyo@gmail.com",
+  companyName:"chez moimoi",
+  firstName: "John-Didier",
+  lastName: "Perroquet",
+},
+{
+  channel: ["Facebook Messenger"],
+  budget: ["€"],  
+  clientType: ["Grande Entreprise"],
+  email: "yaya@gmail.com",
+  companyName:"chez mimi",
+  firstName: "Marie-Thérèse",
+  lastName: "Mamène",
 }
 ]
 
-Prospect.create(prospects)
+ProspectModel.create(prospects)
   .then(prospectDocuments => {
     console.log(prospectDocuments);
   })
