@@ -9,7 +9,7 @@ class CreateSolution extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      solutionName: "",
+      solutionName: this.solutionName,
       creationDate: "",
       originCountry: "",
       channel: [
@@ -40,115 +40,7 @@ class CreateSolution extends Component {
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  getChannels = (something) => {
-    this.setState({
-      channel: something,
-    });
-  };
-
-  getIntegrations = (something) => {
-    this.setState({
-      integration: something,
-    });
-
-  };
-
-  getLanguages = (something) => {
-    this.setState({
-      languagesNLP: something,
-    });
-  };
-
-
-  getClientTypes = (something) => {
-    this.setState({
-      clientType: something,
-    });
-  };
-
-  handleChange = (event) => {
-    let { name, value, type } = event.target;
-
-    if (type === "checkbox") {
-      value = event.target.checked;
-    }
-
-    this.setState({
-          [name]: value,
-        });
-      };
-
   
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-
-    const updateSolution = {
-      solutionName: this.state.solutionName,
-      creationDate: this.state.creationDate,
-      originCountry: this.state.originCountry,
-      channel: this.state.channel.map((object) => object.value),
-      integration: this.state.integration.map((object) => object.value),
-      pricing: this.state.pricing,
-      additionalServices: this.state.additionalServices,
-      nlpProp: this.state.nlpProp,
-      multiLanguages: this.state.multiLanguages,
-      languagesNLP: this.state.languagesNLP.map((object) => object.value),
-      clientType: this.state.clientType.map((object) => object.value),
-      contactName: this.state.contactName,
-      contactEmail: this.state.contactEmail,
-      companyURL: this.state.companyURL,
-      logo: this.state.logo,
-    };
-
-    console.log(updateSolution);
-
-    axios
-      .patch(`http://localhost:5000/api/solutions/${this.props.match.params}`, updateSolution)
-      .then((response) => {
-        this.props.history.push("/solutions");
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    // this.setState({
-    //   solutionName: "",
-    //   creationDate: "",
-    //   originCountry: "",
-    //   channel: "",
-    //   integration: "",
-    //   pricing: "",
-    //   additionalServices: false,
-    //   nlpProp: false,
-    //   multiLanguages: false,
-    //   languagesNLP: "",
-    //   clientType: "",
-    //   contactName: "",
-    //   contactEmail: "",
-    //   companyURL: "",
-    //   logo: "",
-    // });
-  };
-
-  // state = {
-  //   solutionName: "",
-  //   creationDate: "",
-  //   originCountry: "",
-  //   channel: "",
-  //   integration: "",
-  //   pricing: "",
-  //   additionalServices: false,
-  //   nlpProp: false,
-  //   multiLanguages: false,
-  //   languagesNLP: "",
-  //   clientType: "",
-  //   contactName: "",
-  //   contactEmail: "",
-  //   companyURL: "",
-  //   logo: "",
-  // };
 
   // handleChange = (event) => {
   //   let { name, value, type } = event.target;
@@ -158,33 +50,138 @@ class CreateSolution extends Component {
   //   }
 
   //   this.setState({
-  //     [name]: value,
-  //   });
-  // };
+  //         [name]: value,
+  //       });
+  //     };
+// --------------------------------------------------------------------------
+      componentDidMount() {
+        const id = this.props.match.params.id;
+    
+        axios
+          .get("http://localhost:5000/api/solutions/" + id)
+          .then((response) => {
+            const solution = response.data;
+            this.setState({
+              solutionName: solution.solutionName,
+              creationDate: solution.creationDate,
+              originCountry: solution.originCountry,
+              channel: solution.channel.map((solution) => solution.value),
+              integration: solution.integration.map((solution) => solution.value),
+              pricing: solution.pricing,
+              additionalServices: solution.additionalServices,
+              nlpProp: solution.nlpProp,
+              multiLanguages: solution.multiLanguages,
+              languagesNLP: solution.languagesNLP.map((solution) => solution.value),
+              clientType: solution.clientType.map((solution) => solution.value),
+              contactName: solution.contactName,
+              contactEmail: solution.contactEmail,
+              companyURL: solution.companyURL,
+              logo: solution.logo,
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+
+      getChannels = (something) => {
+        this.setState({
+          channel: something,
+        });
+      };
+    
+      getIntegrations = (something) => {
+        this.setState({
+          integration: something,
+        });
+    
+      };
+    
+      getLanguages = (something) => {
+        this.setState({
+          languagesNLP: something,
+        });
+      };
+    
+    
+      getClientTypes = (something) => {
+        this.setState({
+          clientType: something,
+        });
+      };
+    
+      handleChange = (event) => {
+        let { name, value, type } = event.target;
+
+        if (type === "checkbox") {
+        value = event.target.checked;
+        }
+
+        this.setState({
+          [name]: value,
+        });
+      };
+    
+      handleSubmit = (event) => {
+        event.preventDefault();
+    
+        const id = this.props.match.params.id;
+        const updateValues = {
+          solutionName: this.state.solutionName,
+          creationDate: this.state.creationDate,
+          originCountry: this.state.originCountry,
+          // channel: this.state.channel.map((el) => el.value),
+          // integration: this.state.integration.map((el) => el.value),
+          pricing: this.state.pricing,
+          additionalServices: this.state.additionalServices,
+          nlpProp: this.state.nlpProp,
+          multiLanguages: this.state.multiLanguages,
+          // languagesNLP: this.state.languagesNLP.map((el) => el.value),
+          // clientType: this.state.clientType.map((el) => el.value),
+          contactName: this.state.contactName,
+          contactEmail: this.state.contactEmail,
+          companyURL: this.state.companyURL,
+          logo: this.state.logo,
+        };
+    
+        axios
+          .patch("http://localhost:5000/api/solutions/" + id, updateValues)
+          .then((response) => {
+            // console.log(response.data);
+            this.props.history.push("/solutions");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+
+  // --------------------------------------------------------------------------------------
 
   // handleSubmit = (event) => {
   //   event.preventDefault();
 
-  //   const newSolution = {
+  //   const updateSolution = {
   //     solutionName: this.state.solutionName,
   //     creationDate: this.state.creationDate,
   //     originCountry: this.state.originCountry,
-  //     channel: this.state.channel,
-  //     integration: this.state.integration,
+  //     channel: this.state.channel.map((object) => object.value),
+  //     integration: this.state.integration.map((object) => object.value),
   //     pricing: this.state.pricing,
   //     additionalServices: this.state.additionalServices,
   //     nlpProp: this.state.nlpProp,
   //     multiLanguages: this.state.multiLanguages,
-  //     languagesNLP: this.state.languagesNLP,
-  //     clientType: this.state.clientType,
+  //     languagesNLP: this.state.languagesNLP.map((object) => object.value),
+  //     clientType: this.state.clientType.map((object) => object.value),
   //     contactName: this.state.contactName,
   //     contactEmail: this.state.contactEmail,
   //     companyURL: this.state.companyURL,
   //     logo: this.state.logo,
   //   };
 
+  //   console.log(updateSolution);
+
   //   axios
-  //     .post("http://localhost:5000/api/solutions/", newSolution)
+  //     .patch(`http://localhost:5000/api/solutions/${this.props.match.params}`, updateSolution)
   //     .then((response) => {
   //       this.props.history.push("/solutions");
   //       console.log(response.data);
@@ -192,26 +189,8 @@ class CreateSolution extends Component {
   //     .catch((error) => {
   //       console.log(error);
   //     });
-
-  //     this.setState({
-  //       solutionName: "",
-  //       creationDate: "",
-  //       originCountry: "",
-  //       channel: "",
-  //       integration: "",
-  //       pricing: "",
-  //       additionalServices: false,
-  //       nlpProp: false,
-  //       multiLanguages: false,
-  //       languagesNLP: "",
-  //       clientType: "",
-  //       contactName: "",
-  //       contactEmail: "",
-  //       companyURL: "",
-  //       logo: "",
-  //     });
-
   // };
+
   render() {  
     return (
       <div>
@@ -225,6 +204,7 @@ class CreateSolution extends Component {
               type="text"
               name="solutionName"
               id="solutionName"
+              placeholder={this.solutionName}
               className="Form__input"
               value={this.state.solutionName}
               onChange={this.handleChange}

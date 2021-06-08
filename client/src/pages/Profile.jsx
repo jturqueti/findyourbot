@@ -60,7 +60,7 @@ class Profile extends React.Component {
                 Delete
               </button></td>
               <td>
-              <Link>Update</Link>
+              <Link to={`/update/${eachSolution._id}`}>Update</Link>
             </td>
             <td><Link to={`/solutions/${eachSolution._id}`}>Voir la fiche</Link></td>
           </tr>
@@ -87,7 +87,7 @@ class Profile extends React.Component {
                 Delete
               </button></td>
               <td>
-              <Link>Update</Link>
+              <Link to={`/update/${eachSolution._id}`}>Update</Link>
             </td>
             <td><Link to={`/solutions/${eachSolution._id}`}>Voir la fiche</Link></td>
           </tr>
