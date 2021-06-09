@@ -88,11 +88,12 @@ class CreateProspect extends Component {
   showSolutions() {
       return  this.state.solutions.map((eachSolution, index) => {
         return (
+         
           <tr key={index}>
+                   <h1>Les solutions qui vous correpondent</h1>
               <td>{eachSolution.solutionName}</td>
             <td>
               <img
-                className="img-fluid img-thumbnail celebImg"
                 src={eachSolution.logo}
                 alt={eachSolution.solutionName}
               />
@@ -105,26 +106,28 @@ class CreateProspect extends Component {
   
   render() {  
     return (
-      <div>
+      <div >
         <form  onSubmit={this.handleSubmit}>
-          <h1>Trouvez la solution qui correspond à votre projet !</h1>
+          <div className="background-survey">
+          <h1 className="titre">Trouvez la solution qui correspond à votre projet !</h1>
           
-          <section className="section-question">
+          <section className="container-white section section-question">
+          
           <div className="blockq question-bot">
 
           <h2>Channel requis</h2>
          
-            <label  htmlFor="channel">
+            <label className="question-client" htmlFor="channel">
               Où souhaitez-vous que votre bot soit déployé ?
             </label>
             <br/>
            
             <select
+            className="question-client select"
               name="channel"
               id="channel"
               onChange={this.handleChange}
               value={this.state.channel}
-              className="Form__input"
             >
               <option >Choisir</option>
               <option value="Webchat">Webchat</option>
@@ -139,16 +142,16 @@ class CreateProspect extends Component {
           
           <h2>Budget à disposition</h2>
           
-            <label  htmlFor="budget">
+            <label className="question-client"  htmlFor="budget">
               Quel budget êtes vous prêt à investir ?
             </label>
             <br/>
             <select
+            className="question-client select"
               name="pricing"
               id="pricing"
               onChange={this.handleChange}
               value={this.state.pricing}
-              className="Form__input"
             >
               <option >Choisir</option>
               <option value="Gratuit">No budget!</option>
@@ -161,7 +164,7 @@ class CreateProspect extends Component {
           <div className="blockq question-bot">
           <h2>Type de structure</h2>
        
-            <label htmlFor="clientType">
+            <label className="question-client" htmlFor="clientType">
               Quelle est la taille de votre société ?
             </label>
            <br/>
@@ -171,7 +174,7 @@ class CreateProspect extends Component {
               id="clientType"
               onChange={this.handleChange}
               value={this.state.clientType}
-              className="Form__input"
+              className="question-client select"
             >
               <option >Choisir</option>
               <option value="Particulier">Particulier</option>
@@ -181,19 +184,22 @@ class CreateProspect extends Component {
             </select>
           </div>
           </section>
+          
 
-          <section className="section section-info-user">
-          <h2>Vos informations</h2>
+
+<div className="container-white">
+          <h2 className="titre-info">Vos informations</h2>
+          <section className="section">
           <div className="blockq question-user">
-            <label className="Form__label" htmlFor="companyName">
-              Nom de la société
+            <label htmlFor="companyName">
+              Nom de votre entreprise
             </label>
-         
+            <br/>
             <input
+            
               type="text"
               name="companyName"
               id="companyName"
-              className="Form__input"
               value={this.state.companyName}
               onChange={this.handleChange}
             />
@@ -203,27 +209,28 @@ class CreateProspect extends Component {
             <label  htmlFor="firstName">
               Prénom
             </label>
-          
+            <br/>
             <input
+           
               type="text"
               name="firstName"
               id="firstName"
-              className="Form__input"
               value={this.state.firstName}
               onChange={this.handleChange}
             />
           </div>
          
           <div  className="blockq question-user">
-            <label className="Form__label" htmlFor="lastName">
+            <label htmlFor="lastName">
               Nom
             </label>
-         
+            <br/>
             <input
+            
               type="text"
               name="lastName"
               id="lastName"
-              className="Form__input"
+              
               value={this.state.lastName}
               onChange={this.handleChange}
             />
@@ -233,21 +240,21 @@ class CreateProspect extends Component {
             <label  htmlFor="email">
               Email professionnel
             </label>
-          
+          <br/>
             <input
               type="text"
               name="email"
               id="email"
-              className="Form__input"
               value={this.state.email}
               onChange={this.handleChange}
             />
           </div>
   </section>
-          <button>Submit</button>
+  </div>
+  </div>
+          <button className="btn">Envoyer</button>
         </form>
         <div className="MySolutions">
-          <h2>Hello solutions</h2>
           <p>{this.showSolutions()}</p>
         </div>
       </div>
