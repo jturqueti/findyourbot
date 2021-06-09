@@ -1,0 +1,65 @@
+.SolutionCard {
+    width: 175px;
+    height: 175px;
+    border-radius: 40px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	/* align-content: center; */
+    /* background-color: #deedf0; */
+    background-color: white;
+    padding-top: 10px;
+    margin-top: 25px;
+}
+
+/* .SolutionCard > td {
+    width: auto;
+    height:20px;
+} */
+
+.CardLogo {
+    width: 60px;
+    height: 60px;
+}
+
+.CardFlag {
+    width: 30px;
+    height: 20px;
+}
+
+.CardName{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.SolutionsWrapper {
+    display: grid;
+    direction: row;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, 200px);
+    padding: 30px 30px;
+}
+
+.row3 {
+    display: flex;
+    justify-content: center;
+}
+
+tbody {
+    /* padding-top: 50px;
+    padding-bottom: 50px; */
+    /* padding: 50px; */
+    /* margin: 50px; */
+    margin-top: 25px;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+    background: #654ea3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,#fdf6ee, #ffeedb, #ffd8cc);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdf6ee, #ffeedb, #ffd8cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

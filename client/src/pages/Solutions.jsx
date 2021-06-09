@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import SearchBar from '../components/SearchBar';
-import "../styles/profile.css";
-import {Link} from "react-router-dom";
-//import SolutionCard from "./../components/SolutionCard";
+import React, { Component } from "react";
+import axios from "axios";
+import SearchBar from "../components/SearchBar";
+// import "../styles/profile.css";
+import "../styles/SolutionCard.css";
+import { Link } from "react-router-dom";
 
 class Solutions extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       solutions: [],
-      searchValue:'',
-    }
+      searchValue: "",
+    };
   }
-    
+
   country = (originCountry) => {
-    console.log(originCountry)
+    console.log(originCountry);
     if (originCountry === "France") {
       return "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1200px-Flag_of_France.svg.png";
     } else if (originCountry === "Espagne") {
@@ -25,81 +25,111 @@ class Solutions extends Component {
     }
   };
 
-    componentDidMount() {
-      axios
-        .get(process.env.REACT_APP_BACKEND_URL + '/api/solutions')
-        .then((response) => {
-          this.setState({
-            solutions: response.data.reverse(),
-          });
-        })
-        .catch((error) => {
-          console.log(error);
+  componentDidMount() {
+    axios
+      .get(process.env.REACT_APP_BACKEND_URL + "/api/solutions")
+      .then((response) => {
+        this.setState({
+          solutions: response.data.reverse(),
         });
-    }
-  
-    handleSearchValue = (value) => {
-      this.setState({
-        searchValue: value,
+      })
+      .catch((error) => {
+        console.log(error);
       });
-    };
+  }
 
-    showSolutions() {
-      const filteredSolutions = this.state.solutions.filter((solutions) => {
-        return solutions.solutionName.toLowerCase().includes(this.state.searchValue.toLowerCase());
+  handleSearchValue = (value) => {
+    this.setState({
+      searchValue: value,
+    });
+  };
+
+  showSolutions() {
+    const filteredSolutions = this.state.solutions.filter((solutions) => {
+      return solutions.solutionName
+        .toLowerCase()
+        .includes(this.state.searchValue.toLowerCase());
+    });
+
+    if (this.state.searchValue === "") {
+      return this.state.solutions.map((eachSolution, index) => {
+        return (
+          <div>
+            <div className="SolutionsWrapper">
+              <Link to={`/solutions/${eachSolution._id}`}>
+                <div className="SolutionCard">
+                  <td id="TableCard" key={index}>
+                    <tr className="row1">
+                      <img
+                        className="CardLogo"
+                        src={eachSolution.logo}
+                        alt={eachSolution.solutionName}
+                      />
+                    </tr>
+                    {/* <br></br> */}
+                    <tr className="row2">
+                      <h3 className="CardName">{eachSolution.solutionName}</h3>
+                    </tr>
+                    {/* <br></br> */}
+                    <tr className="row3">
+                      <img
+                        className="CardFlag"
+                        alt="CardFlag"
+                        src={this.country(eachSolution.originCountry)}
+                      />
+                    </tr>
+                  </td>
+                </div>
+              </Link>
+            </div>
+          </div>
+        );
       });
-  
-      if ( this.state.searchValue === ''){
-        return this.state.solutions.map((eachSolution, index) => {
-          return (
-            <div> <Link to={`/solutions/${eachSolution._id}`}>
-            <tr key={index}>
-                <td>{eachSolution.solutionName}</td>
-                <td>
-                  <img className="flag" alt="flag" src={this.country(eachSolution.originCountry)} />
-               </td>
-              <td>
-                <img
-                  className="img-fluid img-thumbnail celebImg"
-                  src={eachSolution.logo}
-                  alt={eachSolution.solutionName}
-                />
-                </td>
-            </tr>
-            </Link>
+    } else {
+      return filteredSolutions.map((eachSolution, index) => {
+        return (
+          <div>
+            <div className="SolutionsWrapper">
+              <Link to={`/solutions/${eachSolution._id}`}>
+                <div className="SolutionCard">
+                  <tr key={index}>
+                    <td>
+                      <img
+                        className="CardLogo"
+                        src={eachSolution.logo}
+                        alt={eachSolution.solutionName}
+                      />
+                    </td>
+                    {/* <br></br> */}
+                    <td>
+                      <h3 className="CardName">{eachSolution.solutionName}</h3>
+                    </td>
+                    {/* <br></br> */}
+                    <td>
+                      <img
+                        className="CardFlag"
+                        alt="CardFlag"
+                        src={this.country(eachSolution.originCountry)}
+                      />
+                    </td>
+                  </tr>
+                </div>
+              </Link>
             </div>
-          );
-        });
-      }  else {
-        return filteredSolutions.map((eachSolution, index) => {
-          return (
-            <div> <Link to={`/solutions/${eachSolution._id}`}>
-            <tr key={index}>
-                <td>{eachSolution.solutionName}</td>
-              <td>
-              <td>
-                  <img className="flag" alt="flag" src={this.country(eachSolution.originCountry)} />
-               </td>
-                <img
-                  className="img-fluid img-thumbnail celebImg"
-                  src={eachSolution.logo}
-                  alt={eachSolution.solutionName}
-                />
-               </td>
-            </tr>
-            </Link>
-            </div>
-          );
-        });
-      } 
+          </div>
+        );
+      });
     }
+  }
 
   render() {
     return (
       <div>
         <h1>Solutions référencées:</h1>
-        <SearchBar handleChange={this.handleSearchValue}
-            value={this.state.searchValue} />
+        <SearchBar
+          handleChange={this.handleSearchValue}
+          value={this.state.searchValue}
+        />
         <tbody>{this.showSolutions()}</tbody>
       </div>
     );
