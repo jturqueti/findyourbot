@@ -67,8 +67,8 @@ class CreateProspect extends Component {
     axios
       .post("http://localhost:5000/api/prospect/", newProspect)
       .then((response) => {
-        this.props.history.push("/solutions");
         console.log(response.data);
+        this.props.history.push("/solutions");
       })
       .catch((error) => {
         console.log(error);

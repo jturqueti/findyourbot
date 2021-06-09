@@ -77,14 +77,15 @@ router.delete("/:id", (req, res, next) => {
 });
 
 // en cours ///
-// router.post("/browser", (req, res, next) => {
-//   console.log(req.body);
+router.post("/browser", (req, res, next) => {
+  console.log(req.body);
 
-//   SolutionModel.find({ q1: req.body.q1, q2: req.body.q2 }).then(
-//     (solutionFromDB) => {
-//       res.json(solutionFromDB);
-//     }
-//   );
-// });
+  SolutionModel.find({channel: req.body.channel,  budget: req.body.budget, clientType: req.body.clientType})
+  .then((solutionFromDB) => {
+    console.log(solutionFromDB)
+      res.json(solutionFromDB);
+    }
+  );
+});
 
 module.exports = router;

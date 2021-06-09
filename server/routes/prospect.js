@@ -23,6 +23,7 @@ router.post("/",  (req, res, next) => {
     ProspectModel.create(newProspect)
         .then((prospect) => {
             res.status(201).json(prospect); 
+
             })
         .catch(next);
 });
