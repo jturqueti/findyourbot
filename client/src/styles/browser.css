@@ -15,7 +15,7 @@ margin: 6%;
     padding-bottom: 10px;
 }
 
-.btn {
+.btn-cta-lead {
     background-color: #0a1d37;
     border-radius: 15px;
     box-shadow: 8px 8px 0 #ffeedb;
@@ -27,7 +27,7 @@ margin: 6%;
     margin: 20px;
     border: none;
   }
-.btn:hover{
+.btn-cta-lead:hover{
     background-color: #ffbd9b;
 }
 

@@ -252,7 +252,7 @@ class CreateProspect extends Component {
   </section>
   </div>
   </div>
-          <button className="btn">Envoyer</button>
+          <button className="btn-cta-lead">Envoyer</button>
         </form>
         <div className="MySolutions">
           <p>{this.showSolutions()}</p>
