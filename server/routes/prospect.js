@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const ProspectModel = require("../models/Prospect");
+const SolutionModel = require ("../models/Solution")
+
 
 router.get("/", (req, res, next) => {
     ProspectModel.find()
@@ -19,14 +21,34 @@ ProspectModel.findById(req.params.id)
 });
 
 router.post("/",  (req, res, next) => {
+  console.log(req.body)
+  console.log("héhéh")
     const newProspect = { ...req.body };
     ProspectModel.create(newProspect)
-        .then((prospect) => {
-            res.status(201).json(prospect); 
-
+        .then((infoprospect) => {
+          SolutionModel.find({channel: req.body.channel,  pricing: req.body.pricing, clientType: req.body.clientType})
+          .then((solutionFromDB) => {
+            console.log(solutionFromDB)
+              res.json(solutionFromDB);
+            }
+          );
             })
+        
         .catch(next);
 });
+
+router.post("/", (req, res, next) => {
+  console.log(req.body);
+  console.log("lalala")
+  console.log(req.body.channel);
+  SolutionModel.find({channel: req.body.channel,  budget: req.body.budget, clientType: req.body.clientType})
+  .then((solutionFromDB) => {
+    console.log(solutionFromDB)
+      res.json(solutionFromDB);
+    }
+  );
+});
+
 
 router.delete("/:id", (req, res, next) => {
   ProspectModel.findById(req.params.id)

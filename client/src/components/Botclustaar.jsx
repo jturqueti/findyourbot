@@ -4,8 +4,14 @@
 // export default class Botclustaar extends Component {
 
 //     render() {
-//         return (
-//                 <script>
+//             return (
+//                 <div>
+// <Helmet>
+//                     <title>Page d'accueil</title>
+//                     <meta name="description" content="Contenu de la page d'accueil" />
+//                     <meta name="keywords" content="Contenu ,de ,la page, d'accueil" />
+//                     <meta name="author" content="" />
+//                     <script type="application/ld+json">{`
 //     window.clustaarSettings = {
 //       bot_id: '60bf8a7970d02100340dfaba',
 //       bot_token: 'eyJ2YWx1ZSI6IjJHU0cxMU5SUXE0NDVmN2MyemV1YVRqTGdiQzVWWGF2b016bXlCUVp5YlUiLCJzdWJqZWN0Ijp7InR5cGUiOiJib3QiLCJpZCI6IjYwYmY4YTc5NzBkMDIxMDAzNDBkZmFiYSJ9fQ==',
@@ -38,7 +44,7 @@
 //       }
 //     };
 //     callWebchat()
-// </script>
-//         )
-//     }
+// `}</script>
+//                 </Helmet>                    </div>
+//             )}
 // }

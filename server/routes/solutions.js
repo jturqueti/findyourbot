@@ -77,9 +77,10 @@ router.delete("/:id", (req, res, next) => {
 });
 
 // en cours ///
-router.post("/browser", (req, res, next) => {
+router.post("/", (req, res, next) => {
   console.log(req.body);
-
+  console.log("coucou")
+  console.log(req.body.channel);
   SolutionModel.find({channel: req.body.channel,  budget: req.body.budget, clientType: req.body.clientType})
   .then((solutionFromDB) => {
     console.log(solutionFromDB)

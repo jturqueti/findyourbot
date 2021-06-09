@@ -13,6 +13,7 @@ import SolutionDetails from "./pages/SolutionDetails";
 import CreateSolution from "./pages/CreateSolution";
 import UpdateSolution from "./pages/UpdateSolution";
 import ProspectList from "./pages/ProspectList"
+import Botclustaar from "./components/Botclustaar"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/solutions" component={Solutions} />
         <Route exact path="/solutions/:id" component={SolutionDetails} />
         <Route exact path="/browser" component={Browser} />
+        <Route exact path="/bot" component={Botclustaar} />
         <ProtectedRoute exact path="/create" component={CreateSolution} />
         <ProtectedRoute exact path="/update/:id" component={UpdateSolution} />
         <ProtectedRoute exact path="/profile" component={Profile} />
