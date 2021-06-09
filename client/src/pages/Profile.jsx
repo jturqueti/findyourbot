@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/profile.css";
+import "../styles/espace-admin.css";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
@@ -136,18 +136,21 @@ class Profile extends React.Component {
   render() {
 
     return (
-      <div className="container-fluid">
-      
+      <div>
+      <div className="background-survey">
 
         <h1>
 Espace Admin          
         </h1>
-
-        <SearchBar handleChange={this.handleSearchValue}
+        <div className="container-cta-profile">
+        <div className="ctadiv"><Link className="cta" to={'/create'}>Créer une solution</Link></div>
+        <div className="ctadiv"><Link className="cta" to={'/prospect'}>Liste des prospects</Link></div>
+        </div>
+        <div className="thin-line"></div>
+        <div className="searchbar">
+<p>Rechercher par nom de société: </p><SearchBar handleChange={this.handleSearchValue}
             value={this.state.searchValue} />
-
-        <br></br>
-        <br></br>
+</div>
 
         <button
           className="btn btn-sort"
@@ -161,9 +164,8 @@ Espace Admin
         >
           Sort by name
         </button>
-        <div className="ctadiv"><Link className="cta" to={'/create'}>Créer une solution</Link></div>
-        <div className="ctadiv"><Link className="cta" to={'/prospect'}>Liste des prospects</Link></div>
-
+       
+        </div>
         <table className="table">
           <thead className="thead-light">
             <tr>

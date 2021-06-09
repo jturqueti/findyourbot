@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/profile.css";
+import "../styles/espace-admin.css";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
@@ -10,6 +10,7 @@ class ProspectList extends React.Component {
     this.state = {
       prospects: [],
       searchValue:'',
+      clicked: true, 
     }
   }
 
@@ -45,6 +46,9 @@ class ProspectList extends React.Component {
       });
     };
       
+changeColorButton(){
+  this.setState({clicked: !this.state.clicked})
+}
 
   showSolutions() {
     const filteredProspect = this.state.prospects.filter((prospects) => {
@@ -74,9 +78,6 @@ class ProspectList extends React.Component {
               >
                 Delete
               </button></td>
-              <td>
-              <Link to={`/update/${eachSolution._id}`}>Update</Link>
-            </td>
         
           </tr>
         );
@@ -85,9 +86,9 @@ class ProspectList extends React.Component {
       return filteredProspect.map((eachSolution, index) => {
         return (
           <tr key={index}>
-                <td>{eachSolution.companyName}</td>
-              <td>{eachSolution.firstName}</td>
-              <td>{eachSolution.lastName}</td>
+              <td >{eachSolution.companyName}</td>
+              <td >{eachSolution.firstName}</td>
+              <td >{eachSolution.lastName}</td>
               <td>{eachSolution.email}</td>
               <td>{eachSolution.clientType}</td>
               <td>{eachSolution.budget}</td>
@@ -133,64 +134,71 @@ class ProspectList extends React.Component {
 
 
   render() {
+let btnClicked = this.state.clicked ? "btn-clicked" : "btn-notClicked";
 
     return (
-      <div className="container-fluid">
-      
+      <div>
+      <div className="background-survey">
 
         <h1>
 Espace Admin          
         </h1>
+        <div className="searchbar">
 <p>Rechercher par nom de société: </p>
         <SearchBar handleChange={this.handleSearchValue}
             value={this.state.searchValue} />
-
-        <br></br>
-        <br></br>
-
+</div>
+     
         <button
-          className="btn btn-sort"
-          onClick={() => this.sortSolutions("companyName")}
+          className={btnClicked}
+         
+        // onClick={this.changeColorButton.bind(this)}
+        onClick={() => this.sortSolutions("companyName")
+      }
         >
           Trier par nom de société
         </button>
         <button
-          className="btn btn-sort"
+          className={btnClicked}
           onClick={() => this.sortSolutions("lastName")}
         >
           Trier par nom du contact
         </button>
         <button
-          className="btn btn-sort"
+          className={btnClicked}
           onClick={() => this.sortSolutions("budget")}
         >
           Trier par budget
         </button>
         <button
-          className="btn btn-sort"
+          className={btnClicked}
           onClick={() => this.sortSolutions("clientType")}
         >
           Trier par taille d'entreprise
         </button>
         
-        <div className="ctadiv"><Link className="cta" to={'/profile'}>Retour gestion solutions</Link></div>
+        <Link to={'/profile'}>Retour gestion solutions</Link>
+
+        </div>
+<div >
 
         <table className="table">
-          <thead className="thead-light">
+          <thead >
             <tr>
-              <th scope="col">Nom de la société</th>
-              <th scope="col">Prénom</th>
-              <th scope="col">Nom</th>
-              <th scope="col">Email</th>
+              <th  scope="col">Nom de la société</th>
+              <th  scope="col">Prénom</th>
+              <th  scope="col">Nom</th>
+              <th  scope="col">Email</th>
               <th scope="col">Taille entreprise</th>
               <th scope="col">Budget</th>
               <th scope="col">Canal de déploiement</th>
-              <th scope="col">NLP nécessaire</th>
             </tr>
           </thead>
           <tbody>{this.showSolutions()}</tbody>
         </table>
+        </div>
       </div>
+     
     );
   }
 }
