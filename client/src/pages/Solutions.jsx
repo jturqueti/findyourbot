@@ -27,7 +27,7 @@ class Solutions extends Component {
 
     componentDidMount() {
       axios
-        .get('http://localhost:5000/api/solutions')
+        .get(process.env.REACT_APP_BACKEND_URL + '/api/solutions')
         .then((response) => {
           this.setState({
             solutions: response.data.reverse(),

@@ -56,12 +56,10 @@ class CreateProspect extends Component {
     console.log(newProspect);
 
     axios
-      .post("http://localhost:5000/api/prospect/", newProspect)
+      .post(process.env.REACT_APP_BACKEND_URL + "/api/prospect/", newProspect)
       .then((response) => {
         console.log(response.data);
-        console.log("yoyo");
         console.log(response);
-        console.log("yiyi")
         this.setState({
                 solutions: response.data,
               });
@@ -104,27 +102,6 @@ class CreateProspect extends Component {
       });
     }
   
-
-
-  // componentDidMount() {
-  //   const beerId = this.props.match.params.beerId;
-  //   axios
-  //     .get('https://ih-beers-api2.herokuapp.com/beers/' + beerId)
-  //     .then((response) => {
-  //       this.setState({
-  //         beer: response.data,
-  //         loading: false,
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //       this.setState({
-  //         loading: false,
-  //       });
-  //     });
-  // }
-
-
   render() {  
     return (
       <div>

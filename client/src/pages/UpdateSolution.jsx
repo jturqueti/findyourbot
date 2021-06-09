@@ -58,7 +58,7 @@ class CreateSolution extends Component {
         const id = this.props.match.params.id;
     
         axios
-          .get("http://localhost:5000/api/solutions/" + id)
+          .get(process.env.REACT_APP_BACKEND_URL + "/api/solutions/" + id)
           .then((response) => {
             const solution = response.data;
             this.setState({
@@ -145,7 +145,7 @@ class CreateSolution extends Component {
         };
     
         axios
-          .patch("http://localhost:5000/api/solutions/" + id, updateValues)
+          .patch(process.env.REACT_APP_BACKEND_URL + "/api/solutions/" + id, updateValues)
           .then((response) => {
             console.log(response.data);
             this.props.history.push("/solutions/" + id);
@@ -155,41 +155,6 @@ class CreateSolution extends Component {
           });
       };
 
-  // --------------------------------------------------------------------------------------
-
-  // handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   const updateSolution = {
-  //     solutionName: this.state.solutionName,
-  //     creationDate: this.state.creationDate,
-  //     originCountry: this.state.originCountry,
-  //     channel: this.state.channel.map((object) => object.value),
-  //     integration: this.state.integration.map((object) => object.value),
-  //     pricing: this.state.pricing,
-  //     additionalServices: this.state.additionalServices,
-  //     nlpProp: this.state.nlpProp,
-  //     multiLanguages: this.state.multiLanguages,
-  //     languagesNLP: this.state.languagesNLP.map((object) => object.value),
-  //     clientType: this.state.clientType.map((object) => object.value),
-  //     contactName: this.state.contactName,
-  //     contactEmail: this.state.contactEmail,
-  //     companyURL: this.state.companyURL,
-  //     logo: this.state.logo,
-  //   };
-
-  //   console.log(updateSolution);
-
-  //   axios
-  //     .patch(`http://localhost:5000/api/solutions/${this.props.match.params}`, updateSolution)
-  //     .then((response) => {
-  //       this.props.history.push("/solutions");
-  //       console.log(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
 
   render() {  
     return (

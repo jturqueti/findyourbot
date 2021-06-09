@@ -9,7 +9,7 @@ class SolutionDetails extends Component {
     }
     getSingleProject = () => {
         const { params } = this.props.match;
-        axios.get(`http://localhost:5000/api/solutions/${params.id}`)
+        axios.get(process.env.REACT_APP_BACKEND_URL + `/api/solutions/${params.id}`)
         .then( responseFromApi =>{
             const theProject = responseFromApi.data;
             this.setState(theProject);
@@ -56,47 +56,5 @@ class SolutionDetails extends Component {
     }
   }
 
-
-// class SingleSolution extends Component {
-//   state = {
-//     solution: null,
-//     loading: true,
-//   };
-
-//   componentDidMount() {
-//     const solutionId = this.props.match.params.solutionId;
-
-//     axios
-//       .get('http://localhost:5000/api/solutions/' + solutionId)
-//       .then((response) => {
-//         this.setState({
-//             solution: response.data,
-//           loading: false,
-//         });
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//         this.setState({
-//           loading: false,
-//         });
-//       });
-//   }
-
-//   render() {
-//     if (this.state.loading) {
-//       return <div>Loading...</div>;
-//     }
-
-//     if (!this.state.solution) {
-//       return <div>No solution was found {":'("}</div>;
-//     }
-
-//     return (
-//       <div >
-//         <SolutionCard solution={this.state.solution} />
-//       </div>
-//     );
-//   }
-// }
 
 export default SolutionDetails;

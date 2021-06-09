@@ -15,7 +15,7 @@ class ProspectList extends React.Component {
 
   componentDidMount() {
       axios
-        .get('http://localhost:5000/api/prospect')
+        .get(process.env.REACT_APP_BACKEND_URL + '/api/prospect')
         .then((response) => {
           this.setState({
             prospects: response.data.reverse(),

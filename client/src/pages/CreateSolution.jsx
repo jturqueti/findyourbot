@@ -103,7 +103,7 @@ class CreateSolution extends Component {
     console.log(newSolution);
 
     axios
-      .post("http://localhost:5000/api/solutions/", newSolution)
+      .post(process.env.REACT_APP_BACKEND_URL + "/api/solutions/", newSolution)
       .then((response) => {
         this.props.history.push("/solutions");
         console.log(response.data);
