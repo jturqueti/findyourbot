@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import "../styles/browser.css";
 
 class CreateProspect extends Component {
   constructor(props) {
@@ -105,20 +106,19 @@ class CreateProspect extends Component {
   render() {  
     return (
       <div>
-        <form className="Form" onSubmit={this.handleSubmit}>
-          <h1>Formulaire de demande d'informations</h1>
-          <br></br>
+        <form  onSubmit={this.handleSubmit}>
+          <h1>Trouvez la solution qui correspond à votre projet !</h1>
+          
+          <section className="section-question">
+          <div className="blockq question-bot">
+
           <h2>Channel requis</h2>
-          <br></br>
-          <div className="Form__field">
-            <label className="Form__label" htmlFor="channel">
-              Channel
+         
+            <label  htmlFor="channel">
+              Où souhaitez-vous que votre bot soit déployé ?
             </label>
-            <br></br>
-            {/* <ChannelSelector 
-            defaultValue={this.state.channel}
-            onChange={this.getChannels}
-            /> */}
+            <br/>
+           
             <select
               name="channel"
               id="channel"
@@ -135,14 +135,14 @@ class CreateProspect extends Component {
               <option value="Autre">Autre</option>
             </select>
           </div>
-          <br></br>
+          <div className="blockq question-bot">
+          
           <h2>Budget à disposition</h2>
-          <br></br>
-          <div className="Form__field">
-            <label className="Form__label" htmlFor="budget">
-              Budget
+          
+            <label  htmlFor="budget">
+              Quel budget êtes vous prêt à investir ?
             </label>
-            <br></br>
+            <br/>
             <select
               name="pricing"
               id="pricing"
@@ -151,24 +151,21 @@ class CreateProspect extends Component {
               className="Form__input"
             >
               <option >Choisir</option>
-              <option value="Gratuit">Pro bono</option>
+              <option value="Gratuit">No budget!</option>
               <option value="€">€</option>
               <option value="€€">€€</option>
               <option value="€€€">€€€</option>
             </select>
           </div>
-          <br></br>
-          <h2>Type d'oganisation</h2>
-          <br></br>
-          <div className="Form__field">
-            <label className="Form__label" htmlFor="clientType">
-              Type de client
+
+          <div className="blockq question-bot">
+          <h2>Type de structure</h2>
+       
+            <label htmlFor="clientType">
+              Quelle est la taille de votre société ?
             </label>
-            <br></br>
-            {/* <ClientTypeSelector
-              defaultValue={this.state.clientType}
-              onChange={this.getClientTypes} 
-            /> */}
+           <br/>
+           
             <select
               name="clientType"
               id="clientType"
@@ -183,13 +180,15 @@ class CreateProspect extends Component {
               <option value="Administration publique">Administration publique</option>
             </select>
           </div>
-          <br></br>
+          </section>
+
+          <section className="section section-info-user">
           <h2>Vos informations</h2>
-          <div className="Form__field">
+          <div className="blockq question-user">
             <label className="Form__label" htmlFor="companyName">
               Nom de la société
             </label>
-            <br></br>
+         
             <input
               type="text"
               name="companyName"
@@ -199,12 +198,12 @@ class CreateProspect extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <br></br>
-          <div className="Form__field">
-            <label className="Form__label" htmlFor="firstName">
+       
+          <div  className="blockq question-user">
+            <label  htmlFor="firstName">
               Prénom
             </label>
-            <br></br>
+          
             <input
               type="text"
               name="firstName"
@@ -214,12 +213,12 @@ class CreateProspect extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <br></br>
-          <div className="Form__field">
+         
+          <div  className="blockq question-user">
             <label className="Form__label" htmlFor="lastName">
               Nom
             </label>
-            <br></br>
+         
             <input
               type="text"
               name="lastName"
@@ -229,12 +228,12 @@ class CreateProspect extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <br></br>
-          <div className="Form__field">
-            <label className="Form__label" htmlFor="email">
+ 
+          <div  className="blockq question-user">
+            <label  htmlFor="email">
               Email professionnel
             </label>
-            <br></br>
+          
             <input
               type="text"
               name="email"
@@ -244,7 +243,7 @@ class CreateProspect extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <br></br>
+  </section>
           <button>Submit</button>
         </form>
         <div className="MySolutions">
