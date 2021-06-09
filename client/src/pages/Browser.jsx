@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
-import ChannelSelector from "../components/Forms/SelectChannelForm";
-import ClientTypeSelector from "../components/Forms/SelectClientTypeForm";
+import { Link } from 'react-router-dom';
 
 class CreateProspect extends Component {
   constructor(props) {
@@ -14,6 +13,7 @@ class CreateProspect extends Component {
       companyName: "",
       firstName: "",
       lastName: "",
+      solutions: [],
     };
     
   }
@@ -61,6 +61,11 @@ class CreateProspect extends Component {
         console.log(response.data);
         console.log("yoyo");
         console.log(response);
+        console.log("yiyi")
+        this.setState({
+                solutions: response.data,
+              });
+        console.log("tototo")
       })
       .catch((error) => {
         console.log(error);
@@ -68,15 +73,37 @@ class CreateProspect extends Component {
 
   };
 
-  componentDidMount () {
-    axios
-    .get('http://localhost:5000/api/solutions')
-    .then((response)=>{
-      console.log("olivier")
-      console.log(response)
-      console.log("olivia")
-      })
-  }
+  // componentDidMount () {
+  //   axios
+  //   .get('http://localhost:5000/api/solutions')
+  //   .then((response)=>{
+  //     console.log("olivier")
+  //     console.log(response.data)
+  //     this.setState({
+  //       solutions: response.data,
+  //     });
+  //     console.log("olivia")
+  //     })
+  // }
+
+  showSolutions() {
+      return  this.state.solutions.map((eachSolution, index) => {
+        return (
+          <tr key={index}>
+              <td>{eachSolution.solutionName}</td>
+            <td>
+              <img
+                className="img-fluid img-thumbnail celebImg"
+                src={eachSolution.logo}
+                alt={eachSolution.solutionName}
+              />
+             </td>
+            <td><Link to={`/solutions/${eachSolution._id}`}>Voir la fiche</Link></td>
+          </tr>
+        );
+      });
+    }
+  
 
 
   // componentDidMount() {
@@ -243,6 +270,10 @@ class CreateProspect extends Component {
           <br></br>
           <button>Submit</button>
         </form>
+        <div className="MySolutions">
+          <h2>Hello solutions</h2>
+          <p>{this.showSolutions()}</p>
+        </div>
       </div>
     );
   }
