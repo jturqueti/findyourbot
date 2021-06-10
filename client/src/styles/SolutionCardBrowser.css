@@ -1,9 +1,9 @@
-.SolutionCard {
+.SolutionCardBrowser {
     width: 175px;
     height: 175px;
     border-radius: 40px;
     display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
@@ -35,9 +35,9 @@
     padding-bottom: 10px;
 }
 
-.SolutionsWrapper {
-    display: grid;
-    direction: row;
+.MySolutions {
+    display: flex;
+    direction: column;
     justify-content: center;
 	align-items: center;
     gap: 40px;
@@ -62,15 +62,29 @@
     justify-content: center;
 }
 
-.SolutionCard td {
+.SolutionCardBrowser td {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
 .wrapp {
     margin-top: 40px;
+}
+
+.SolutionCardBrowser {
+    width: 175px;
+    height: 175px;
+    border-radius: 40px;
+    background: #654ea3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,#fdf6ee, #ffeedb, #ffd8cc);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdf6ee, #ffeedb, #ffd8cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#send-btn-browser {
+    display: flex;
+    justify-content: center;
 }
 
 

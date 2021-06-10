@@ -20,6 +20,10 @@ class Solutions extends Component {
       return "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1200px-Flag_of_France.svg.png";
     } else if (originCountry === "Espagne") {
       return "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Flag_of_Spain_%28Civil%29_alternate_colours.svg/1280px-Flag_of_Spain_%28Civil%29_alternate_colours.svg.png";
+    } else if (originCountry === "Allemagne") {
+      return "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/165px-Flag_of_Germany.svg.png";
+    } else if (originCountry === "US" || "Etats Unis") {
+      return "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/165px-Flag_of_the_United_States.svg.png";
     } else {
       return "https://www.pngrepo.com/download/167926/rabbit.png";
     }

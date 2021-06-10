@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import "../styles/browser.css";
+import "../styles/SolutionCard.css"
+import "../styles/SolutionCardBrowser.css"
 
 class CreateProspect extends Component {
   constructor(props) {
@@ -88,18 +90,27 @@ class CreateProspect extends Component {
   showSolutions() {
       return  this.state.solutions.map((eachSolution, index) => {
         return (
-         
-          <tr key={index}>
-                   <h1>Les solutions qui vous correpondent</h1>
-              <td>{eachSolution.solutionName}</td>
-            <td>
-              <img
-                src={eachSolution.logo}
-                alt={eachSolution.solutionName}
-              />
-             </td>
-            <td><Link to={`/solutions/${eachSolution._id}`}>Voir la fiche</Link></td>
-          </tr>
+          <div>
+            <div className="SolutionsWrapperBrowser">
+              <Link to={`/solutions/${eachSolution._id}`}>
+                <div className="SolutionCardBrowser">
+                  <tr key={index}>
+                    <td>
+                      <img
+                        className="CardLogo"
+                        src={eachSolution.logo}
+                        alt={eachSolution.solutionName}
+                      />
+                    </td>
+                    {/* <br></br> */}
+                    <td>
+                      <h3 className="CardName">{eachSolution.solutionName}</h3>
+                    </td>
+                  </tr>
+                </div>
+              </Link>
+            </div>
+            </div>
         );
       });
     }
@@ -252,10 +263,14 @@ class CreateProspect extends Component {
   </section>
   </div>
   </div>
-          <button className="btn-cta-lead">Envoyer</button>
+  <div id="send-btn-browser">
+  <button  className="btn-cta-lead">Envoyer</button>
+  </div>
+         
         </form>
         <div className="MySolutions">
-          <p>{this.showSolutions()}</p>
+        <h1>Vos solutions</h1>
+        {this.showSolutions()}
         </div>
       </div>
     );

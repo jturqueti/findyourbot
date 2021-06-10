@@ -287,6 +287,7 @@ class CreateSolution extends Component {
               value={this.state.pricing}
               className="Form__input"
             >
+              <option value="select" disabled>Select</option>
               <option value="Gratuit">Gratuit</option>
               <option value="€">€</option>
               <option value="€€">€€</option>
