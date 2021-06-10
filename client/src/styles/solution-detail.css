@@ -1,0 +1,37 @@
+.inside-solutions-detail{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.logo-solution{
+    width: 200px;
+    margin: 50px;
+}
+
+.container-solution-detail p {
+    font-size: 1.6em;
+}
+
+.title-solution{
+    font-size: 3.3em;
+}
+
+.btn-go-website {
+    background-color: #0a1d37;
+    border-radius: 7px;
+    box-shadow: 8px 8px 0 #ffeedb;
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    
+    border: none;
+  }
+.btn-go-website:hover{
+    background-color: #ffbd9b;
+}

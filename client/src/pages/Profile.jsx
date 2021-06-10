@@ -148,18 +148,18 @@ Espace Admin
         </div>
         <div className="thin-line"></div>
         <div className="search-and-btn">
-        <div className="searchbar">
-<p>Rechercher par nom de société: </p><SearchBar handleChange={this.handleSearchValue}
-            value={this.state.searchValue} />
-</div>
-<div className="container-btn-sort">
-        
         <button
           className="btn-clicked"
           onClick={() => this.sortSolutions("solutionName")}
         >
           Sort by name
         </button>
+        <div className="searchbar">
+<p>Rechercher par nom de société: </p><SearchBar handleChange={this.handleSearchValue}
+            value={this.state.searchValue} />
+</div>
+<div className="container-btn-sort">
+        
         </div>
         </div>
         </div>
