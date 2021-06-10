@@ -76,17 +76,17 @@ router.delete("/:id", (req, res, next) => {
     .catch(next);
 });
 
-// en cours ///
-// router.post("/", (req, res, next) => {
-//   console.log(req.body);
-//   console.log("coucou")
-//   console.log(req.body.channel);
-//   SolutionModel.find({channel: req.body.channel,  budget: req.body.budget, clientType: req.body.clientType})
-//   .then((solutionFromDB) => {
-//     console.log(solutionFromDB)
-//       res.json(solutionFromDB);
-//     }
-//   );
-// });
+//en cours
+router.post("/", (req, res, next) => {
+  console.log(req.body);
+  console.log("coucou")
+  console.log(req.body.channel);
+  SolutionModel.find({channel: req.body.channel,  budget: req.body.budget, clientType: req.body.clientType})
+  .then((solutionFromDB) => {
+    console.log(solutionFromDB)
+      res.json(solutionFromDB);
+    }
+  );
+});
 
 module.exports = router;

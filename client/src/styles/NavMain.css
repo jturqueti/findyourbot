@@ -12,6 +12,18 @@
   display: flex;
 }
 
+/* .footer{
+  margin-left: auto;
+  display: flex;
+  flex-flow: row;
+  font-weight: lighter;
+  font-size: 0.1rem;
+} */
+
+/* .footer p li {
+  height: 15px;
+} */
+
 .NavMain .nav-list li:not(:last-child) {
   margin-right: 20px;
 }

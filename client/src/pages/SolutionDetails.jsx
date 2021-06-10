@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import "../styles/solution-detail.css";
+import Botclustaar from "./../components/Botclustaar";
 
 class SolutionDetails extends Component {
     state = {}
@@ -58,6 +59,7 @@ class SolutionDetails extends Component {
           
         </div>
         </div>
+        {this.state.solutionName==="Clustaar" && <Botclustaar/>}
         </div>
       )
     }
