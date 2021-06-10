@@ -21,7 +21,7 @@ const FooterMain = (props) => {
 
   return (
     <footer className="NavMain">
-      <ul className="nav-list footer">
+      <ul className="nav-footer">
         
         <li><NavLink to="/about">About</NavLink></li>
 
