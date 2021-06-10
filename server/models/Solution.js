@@ -44,7 +44,7 @@ integration: [
   logo: {
     type: String,
     default:
-      "https://cdn1.iconfinder.com/data/icons/gardening-filled-line/614/1935_-_Growing_Plant-512.png",
+      "https://d29fhpw069ctt2.cloudfront.net/icon/image/120743/preview.svg",
   },
 });
 

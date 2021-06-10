@@ -11,7 +11,8 @@
     /* background-color: #deedf0; */
     background-color: white;
     padding-top: 10px;
-    margin-top: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* .SolutionCard > td {
@@ -42,6 +43,7 @@
     gap: 40px;
     grid-template-columns: repeat(auto-fit, 200px);
     padding: 30px 30px;
+    
 }
 
 .row3 {
@@ -67,3 +69,6 @@
     justify-content: center;
 }
 
+.wrapp {
+    margin-top: 40px;
+}

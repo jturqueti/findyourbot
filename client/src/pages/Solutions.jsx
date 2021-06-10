@@ -55,7 +55,7 @@ class Solutions extends Component {
       return this.state.solutions.map((eachSolution, index) => {
         return (
           <div>
-            <div >
+            <div>
               <Link to={`/solutions/${eachSolution._id}`}>
                 <div className="SolutionCard">
                   <td id="TableCard" key={index}>
@@ -137,7 +137,7 @@ Solutions référencées
             value={this.state.searchValue} />
 </div>
 </div>
-<div className="background-survey">
+<div className="background-survey wrapp">
         <tbody className="SolutionsWrapper">{this.showSolutions()}</tbody>
         </div>
       </div>
