@@ -5,7 +5,7 @@ const LinkSolution = (props) => {
   const { solution } = props;
 
   return (
-    <Link className="card" to={`/solutions/${solution._id}`}>
+    <Link  to={`/solutions/${solution._id}`}>
         <img src={solution.logo} alt={solution.solutionName} />
         <div>
           <h2>{solution.solutionName}</h2>

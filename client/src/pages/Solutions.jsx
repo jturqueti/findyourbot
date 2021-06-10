@@ -125,12 +125,21 @@ class Solutions extends Component {
   render() {
     return (
       <div>
-        <h1>Solutions référencées:</h1>
-        <SearchBar
-          handleChange={this.handleSearchValue}
-          value={this.state.searchValue}
-        />
+        <div>
+        <div className="container-buttons-profile">
+        <h1>
+Solutions référencées          
+        </h1>
+        </div>
+        <div className="searchbar">
+<p>Rechercher par nom de société: </p>
+        <SearchBar handleChange={this.handleSearchValue}
+            value={this.state.searchValue} />
+</div>
+</div>
+<div className="background-survey">
         <tbody>{this.showSolutions()}</tbody>
+        </div>
       </div>
     );
   }
