@@ -10,7 +10,7 @@ class CreateProspect extends Component {
     super(props);
     this.state = {
       channel: "",
-      pricing: "",
+      budget: "",
       clientType: "",
       email: "",
       companyName: "",
@@ -48,7 +48,7 @@ class CreateProspect extends Component {
 
     const newProspect = {
       channel: this.state.channel,
-      pricing: this.state.pricing,     
+      budget: this.state.budget,     
       clientType: this.state.clientType,
       email: this.state.email,
       companyName: this.state.companyName,
@@ -147,10 +147,10 @@ class CreateProspect extends Component {
             <br/>
             <select
             className="question-client select"
-              name="pricing"
-              id="pricing"
+              name="budget"
+              id="budget"
               onChange={this.handleChange}
-              value={this.state.pricing}
+              value={this.state.budget}
             >
               <option >Choisir</option>
               <option value="Gratuit">No budget!</option>

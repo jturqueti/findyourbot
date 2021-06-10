@@ -101,9 +101,9 @@ class Profile extends React.Component {
                 Delete
               </button></td>
               <td>
-              <Link to={`/update/${eachSolution._id}`}>Update</Link>
+              <Link className="btn-gestion" to={`/update/${eachSolution._id}`}>Update</Link>
             </td>
-            <td><Link to={`/solutions/${eachSolution._id}`}>Voir la fiche</Link></td>
+            <td><Link className="btn-gestion" to={`/solutions/${eachSolution._id}`}>Voir la fiche</Link></td>
           </tr>
          
         );
