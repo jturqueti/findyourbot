@@ -62,19 +62,8 @@
         border: none;
       }
 
-      .btn-notClicked{
-        background-color: #000000;
-        color: #0a1d37;
-        border-radius: 8px;
-        text-decoration: none;
-        padding: 10px;
-        font-size: 1.1em;
-        font-weight: bold;
-        margin: 20px;
-        border: none;
-    }
 
-    .container-buttons-profile, .container-btn-sort{
+    .container-buttons-profile, .container-btn-sort, .search-and-btn{
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -82,6 +71,28 @@
         align-items: center;
         align-content: center;
     }
+
+.btn-gestion{
+    background-color: #ffeedb;
+    color: #0a1d37;
+    border-radius: 8px;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px;
+    border: none;
+}
+
+.img-profile-solution{
+    width: 100px;
+}
+
+.solutions-profile-list{
+	display: flex;
+	justify-content: space-around;
+	
+}
 
     .btn-return{
         color: #0a1d37;

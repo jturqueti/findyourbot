@@ -10,7 +10,6 @@ class ProspectList extends React.Component {
     this.state = {
       prospects: [],
       searchValue:'',
-      clicked: true, 
     }
   }
 
@@ -46,9 +45,7 @@ class ProspectList extends React.Component {
       });
     };
       
-changeColorButton(){
-  this.setState({clicked: !this.state.clicked})
-}
+
 
   showSolutions() {
     const filteredProspect = this.state.prospects.filter((prospects) => {
@@ -128,13 +125,12 @@ changeColorButton(){
     this.setState({
         prospects: this.state.prospects
         .slice()
-        .sort(compareFunction),
+        .sort(compareFunction)
     });
   }
 
 
   render() {
-let btnClicked = this.state.clicked ? "btn-clicked" : "btn-notClicked";
 
     return (
       <div>
@@ -151,7 +147,7 @@ Espace Admin
 </div>
      <div className="container-buttons-profile">
         <button
-          className={btnClicked}
+          className="btn-clicked"
          
         // onClick={this.changeColorButton.bind(this)}
         onClick={() => this.sortSolutions("companyName")
@@ -160,19 +156,19 @@ Espace Admin
           Trier par nom de société
         </button>
         <button
-          className={btnClicked}
+         className="btn-clicked"
           onClick={() => this.sortSolutions("lastName")}
         >
           Trier par nom du contact
         </button>
         <button
-          className={btnClicked}
+          className="btn-clicked"
           onClick={() => this.sortSolutions("budget")}
         >
           Trier par budget
         </button>
         <button
-          className={btnClicked}
+          className="btn-clicked"
           onClick={() => this.sortSolutions("clientType")}
         >
           Trier par taille d'entreprise

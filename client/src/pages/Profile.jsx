@@ -62,27 +62,26 @@ class Profile extends React.Component {
       return this.state.solutions.map((eachSolution, index) => {
         return (
           <tr key={index}>
-              <td>{eachSolution.solutionName}</td>
+              <td><h2>{eachSolution.solutionName}</h2></td>
             <td>
               <img
-                className="img-fluid img-thumbnail celebImg"
+                className="img-profile-solution"
                 src={eachSolution.logo}
                 alt={eachSolution.solutionName}
               />
              </td>
              <td>
               <button
-                className="btn btn-secondary"
+              className="btn-gestion"
                 onClick={(e) => this.deleteSolution
                   (eachSolution._id, e)}
-                // onClick={this.deleteSolution}
               >
                 Delete
               </button></td>
               <td>
-              <Link to={`/update/${eachSolution._id}`}>Update</Link>
+              <Link className="btn-gestion" to={`/update/${eachSolution._id}`}>Update</Link>
             </td>
-            <td><Link to={`/solutions/${eachSolution._id}`}>Voir la fiche</Link></td>
+            <td><Link  className="btn-gestion" to={`/solutions/${eachSolution._id}`}>Voir la fiche</Link></td>
           </tr>
         );
       });
@@ -90,17 +89,17 @@ class Profile extends React.Component {
       return filteredSolutions.map((eachSolution, index) => {
         return (
           <tr key={index}>
-              <td>{eachSolution.solutionName}</td>
+              <td><h2>{eachSolution.solutionName}</h2></td>
             <td>
               <img
-                className="img-fluid img-thumbnail celebImg"
+                className="img-profile-solution"
                 src={eachSolution.logo}
                 alt={eachSolution.solutionName}
               />
              </td>
             <td>
             <button
-                className="btn btn-secondary"
+               className="btn-gestion"
                 onClick={(e) => this.deleteSolution
                   (eachSolution._id, e)}
                 // onClick={this.deleteSolution}
@@ -112,6 +111,7 @@ class Profile extends React.Component {
             </td>
             <td><Link to={`/solutions/${eachSolution._id}`}>Voir la fiche</Link></td>
           </tr>
+         
         );
       });
     } 
@@ -122,8 +122,6 @@ class Profile extends React.Component {
     let compareFunction;
     if (field === "solutionName") {
       compareFunction = (a, b) => (a.solutionName > b.solutionName ? 1 : -1);
-    } else if (field === "originCountry") {
-      compareFunction = (a, b) => (a.originCountry > b.originCountry ? 1 : -1)
     } 
 
     this.setState({
@@ -149,17 +147,13 @@ Espace Admin
         <div className="ctadiv"><Link className="btn-return" to={'/prospect'}>Liste des prospects</Link></div>
         </div>
         <div className="thin-line"></div>
+        <div className="search-and-btn">
         <div className="searchbar">
 <p>Rechercher par nom de société: </p><SearchBar handleChange={this.handleSearchValue}
             value={this.state.searchValue} />
 </div>
 <div className="container-btn-sort">
-        <button
-          className="btn-clicked"
-          onClick={() => this.sortSolutions("originCountry")}
-        >
-          Date création
-        </button>
+        
         <button
           className="btn-clicked"
           onClick={() => this.sortSolutions("solutionName")}
@@ -168,14 +162,12 @@ Espace Admin
         </button>
         </div>
         </div>
+        </div>
+        <div className="solutions-profile-list">
         <table className="table">
-          <thead className="thead-light">
-            <tr>
-              <th scope="col">Nom de la solution</th>
-            </tr>
-          </thead>
           <tbody>{this.showSolutions()}</tbody>
         </table>
+        </div>
       </div>
     );
   }
@@ -183,50 +175,3 @@ Espace Admin
 
 export default Profile;
 
-
-/// premier code de "profile"
-
-// import React, { Component } from 'react';
-// import axios from 'axios';
-// import LinkSolutionAdmin from '../components/LinkSolutionAdmin';
-// import { Link } from 'react-router-dom';
-
-// //import SolutionCard from "./../components/SolutionCard";
-
-// class Profile extends Component {
-//     state = {
-//         solutions: [],
-//     }
-    
-//     componentDidMount() {
-//       axios
-//         .get('http://localhost:5000/api/solutions')
-//         .then((response) => {
-//           this.setState({
-//             solutions: response.data.reverse(),
-//           });
-//         })
-//         .catch((error) => {
-//           console.log(error);
-//         });
-//     }
-   
-
-//   render() {
-//     return (
-//       <div>
-//         <Link to={'/create'}>Créer une solution</Link>
-//         <h1>Solutions :</h1>
-//         <div>
-//         {this.state.solutions.map((solutionFromArray) => {
-          
-//           return <LinkSolutionAdmin key={solutionFromArray._id} solution={solutionFromArray} />;
-         
-//         })}
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Profile;
