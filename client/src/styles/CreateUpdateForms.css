@@ -1,0 +1,38 @@
+.Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Form__label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.checkboxForm {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkboxForm > input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.checkboxInput {
+    margin-top: 7px;
+    margin-left: 6px;
+}
+
+.CreateUpdateForm {
+    margin-top: 25px;
+}
+
+.CreateUpdateForm > h1 {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}

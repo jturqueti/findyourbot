@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import SearchBar from "../components/SearchBar";
-// import "../styles/profile.css";
 import "../styles/SolutionCard.css";
 import { Link } from "react-router-dom";
 
@@ -70,11 +69,9 @@ class Solutions extends Component {
                         alt={eachSolution.solutionName}
                       />
                     </tr>
-                    {/* <br></br> */}
                     <tr className="row2">
                       <h3 className="CardName">{eachSolution.solutionName}</h3>
                     </tr>
-                    {/* <br></br> */}
                     <tr className="row3">
                       <img
                         className="CardFlag"
@@ -104,11 +101,9 @@ class Solutions extends Component {
                         alt={eachSolution.solutionName}
                       />
                     </td>
-                    {/* <br></br> */}
                     <td>
                       <h3 className="CardName">{eachSolution.solutionName}</h3>
                     </td>
-                    {/* <br></br> */}
                     <td>
                       <img
                         className="CardFlag"

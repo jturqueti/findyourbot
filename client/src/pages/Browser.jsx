@@ -90,7 +90,6 @@ class CreateProspect extends Component {
                         alt={eachSolution.solutionName}
                       />
                     </td>
-                    {/* <br></br> */}
                     <td>
                       <h3 className="CardName">{eachSolution.solutionName}</h3>
                     </td>
