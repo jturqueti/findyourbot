@@ -1,0 +1,31 @@
+.SignInBtn {
+    background-color: #0a1d37;
+    border-radius: 15px;
+    box-shadow: 8px 8px 0 #ffeedb;
+    color: white;
+    text-decoration: none;
+    padding: 15px 40px;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 10px;
+    border: none;
+  }
+.SignInBtn:hover{
+    background-color: #ffbd9b;
+}
+
+.SignInForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.SignInFormWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router-dom";
 import apiHandler from "../../api/apiHandler";
 import { withUser } from "../Auth/withUser";
+import "./../../styles/SignInForm.css"
 
 class FormSignin extends Component {
   state = {
@@ -37,13 +38,19 @@ class FormSignin extends Component {
     }
 
     return (
-      <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-        <label htmlFor="email">Email</label>
+      <div className="SignInFormWrapper">
+      <form className="SignInForm" onChange={this.handleChange} onSubmit={this.handleSubmit}>
+        <label htmlFor="email"><h3>Email</h3></label>
+      
         <input type="email" id="email" name="email" />
-        <label htmlFor="password">Password</label>
+        <br></br>
+        <label htmlFor="password"><h3>Password</h3></label>
+        
         <input type="password" id="password" name="password" />
-        <button>Submit</button>
+        <br></br>
+        <button className="SignInBtn">Submit</button>
       </form>
+      </div>
     );
   }
 }
