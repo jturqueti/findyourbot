@@ -81,7 +81,7 @@ router.post("/", (req, res, next) => {
   console.log(req.body);
   console.log("coucou")
   console.log(req.body.channel);
-  SolutionModel.find({channel: req.body.channel,  budget: req.body.budget, clientType: req.body.clientType})
+  SolutionModel.find({channel: req.body.channel,  pricing: req.body.pricing, clientType: req.body.clientType})
   .then((solutionFromDB) => {
     console.log(solutionFromDB)
       res.json(solutionFromDB);

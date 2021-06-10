@@ -63,7 +63,7 @@ class ProspectList extends React.Component {
               <td>{eachSolution.lastName}</td>
               <td>{eachSolution.email}</td>
               <td>{eachSolution.clientType}</td>
-              <td>{eachSolution.budget}</td>
+              <td>{eachSolution.pricing}</td>
               <td>{eachSolution.channel}</td>
               <td>{eachSolution.languagesNLP}</td>
              <td>
@@ -88,7 +88,7 @@ class ProspectList extends React.Component {
               <td >{eachSolution.lastName}</td>
               <td>{eachSolution.email}</td>
               <td>{eachSolution.clientType}</td>
-              <td>{eachSolution.budget}</td>
+              <td>{eachSolution.pricing}</td>
               <td>{eachSolution.channel}</td>
               <td>{eachSolution.languagesNLP}</td>
             <td>
@@ -114,8 +114,8 @@ class ProspectList extends React.Component {
       compareFunction = (a, b) => (a.companyName > b.companyName ? 1 : -1);
     }  else if (field === "lastName") {
       compareFunction = (a, b) => (a.lastName > b.lastName ? 1 : -1)
-    } else if (field === "budget") {
-        compareFunction = (a, b) => (a.budget > b.budget ? 1 : -1)
+    } else if (field === "pricing") {
+        compareFunction = (a, b) => (a.pricing > b.pricing ? 1 : -1)
       } else if (field === "clientType") {
         compareFunction = (a, b) => (a.clientType > b.clientType ? 1 : -1)
       } 
@@ -161,7 +161,7 @@ Espace Admin
         </button>
         <button
           className="btn-clicked"
-          onClick={() => this.sortSolutions("budget")}
+          onClick={() => this.sortSolutions("pricing")}
         >
           Trier par budget
         </button>

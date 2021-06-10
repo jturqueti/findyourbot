@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const prospectSchema = new Schema({
   channel: String,
-  budget:String,  
+  pricing:String,  
   clientType: String,
   email: { type: String, required: true },
   companyName: String,
