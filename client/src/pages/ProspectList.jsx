@@ -28,7 +28,7 @@ class ProspectList extends React.Component {
 
   deleteSolution(id, e) {
     axios
-      .delete('http://localhost:5000/api/prospect/' + id)
+      .delete(process.env.REACT_APP_BACKEND_URL + '/api/prospect/' + id)
       .then((response) => {
         this.setState({
         prospects: this.state.prospects.filter((item) => item._id !== id)
