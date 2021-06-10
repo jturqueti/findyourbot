@@ -139,16 +139,17 @@ let btnClicked = this.state.clicked ? "btn-clicked" : "btn-notClicked";
     return (
       <div>
       <div className="background-survey">
-
+        <div className="container-buttons-profile">
         <h1>
 Espace Admin          
         </h1>
+        </div>
         <div className="searchbar">
 <p>Rechercher par nom de société: </p>
         <SearchBar handleChange={this.handleSearchValue}
             value={this.state.searchValue} />
 </div>
-     
+     <div className="container-buttons-profile">
         <button
           className={btnClicked}
          
@@ -177,8 +178,8 @@ Espace Admin
           Trier par taille d'entreprise
         </button>
         
-        <Link to={'/profile'}>Retour gestion solutions</Link>
-
+        <Link className="btn-return" to={'/profile'}>Retour vers solutions</Link>
+        </div>
         </div>
 <div >
 

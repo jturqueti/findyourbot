@@ -139,32 +139,34 @@ class Profile extends React.Component {
       <div>
       <div className="background-survey">
 
+      <div className="container-buttons-profile">
         <h1>
 Espace Admin          
         </h1>
+        </div>
         <div className="container-cta-profile">
-        <div className="ctadiv"><Link className="cta" to={'/create'}>Créer une solution</Link></div>
-        <div className="ctadiv"><Link className="cta" to={'/prospect'}>Liste des prospects</Link></div>
+        <div className="ctadiv"><Link className="btn-return" to={'/create'}>Créer une solution</Link></div>
+        <div className="ctadiv"><Link className="btn-return" to={'/prospect'}>Liste des prospects</Link></div>
         </div>
         <div className="thin-line"></div>
         <div className="searchbar">
 <p>Rechercher par nom de société: </p><SearchBar handleChange={this.handleSearchValue}
             value={this.state.searchValue} />
 </div>
-
+<div className="container-btn-sort">
         <button
-          className="btn btn-sort"
+          className="btn-clicked"
           onClick={() => this.sortSolutions("originCountry")}
         >
           Date création
         </button>
         <button
-          className="btn btn-sort"
+          className="btn-clicked"
           onClick={() => this.sortSolutions("solutionName")}
         >
           Sort by name
         </button>
-       
+        </div>
         </div>
         <table className="table">
           <thead className="thead-light">

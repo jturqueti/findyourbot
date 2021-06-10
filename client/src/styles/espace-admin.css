@@ -47,6 +47,7 @@
         justify-content: center;
         align-items: center;
         align-content: center;
+        padding: 17px;
     }
 
     .btn-clicked{
@@ -71,4 +72,43 @@
         font-weight: bold;
         margin: 20px;
         border: none;
+    }
+
+    .container-buttons-profile, .container-btn-sort{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .btn-return{
+        color: #0a1d37;
+        background-color: #ffbd9b;
+        border-radius: 8px;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 1.1em;
+        font-weight: bold;
+        margin: 20px;
+        border: none;
       }
+
+      .btn-return:hover{
+        color: #0a1d37;
+        background-color: rgb(206, 206, 206);
+        border-radius: 8px;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 1.1em;
+        font-weight: bold;
+        margin: 20px;
+        border: none;
+      }
+
+      .btn-sort{
+        margin: 20px 20px 0;
+    
+      }
+     
