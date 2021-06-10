@@ -1,0 +1,21 @@
+{
+  "name": "findyourbot",
+  "version": "1.0.0",
+  "description": "## Intro",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd ./server && npm run start",
+    "preinstall": "cd ./server && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jturqueti/findyourbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jturqueti/findyourbot/issues"
+  },
+  "homepage": "https://github.com/jturqueti/findyourbot#readme"
+}

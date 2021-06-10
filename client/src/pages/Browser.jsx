@@ -74,18 +74,6 @@ class CreateProspect extends Component {
 
   };
 
-  // componentDidMount () {
-  //   axios
-  //   .get('http://localhost:5000/api/solutions')
-  //   .then((response)=>{
-  //     console.log("olivier")
-  //     console.log(response.data)
-  //     this.setState({
-  //       solutions: response.data,
-  //     });
-  //     console.log("olivia")
-  //     })
-  // }
 
   showSolutions() {
       return  this.state.solutions.map((eachSolution, index) => {
@@ -120,8 +108,9 @@ class CreateProspect extends Component {
       <div >
         <form  onSubmit={this.handleSubmit}>
           <div className="background-survey">
+            <div className="title-browser">
           <h1 className="titre">Trouvez la solution qui correspond à votre projet !</h1>
-          
+          </div>
           <section className="container-white section section-question">
           
           <div className="blockq question-bot">
@@ -269,7 +258,7 @@ class CreateProspect extends Component {
          
         </form>
         <div className="MySolutions">
-        <h1>Vos solutions</h1>
+        
         {this.showSolutions()}
         </div>
       </div>

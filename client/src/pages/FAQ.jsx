@@ -6,20 +6,10 @@ const FAQ = () => {
     <div>
       <div className="FAQdiv">
         <div className="FAQpics">
-          {/* <img
-            id="robotPic"
-            src="./../../public/ChatBot.gif"
-            alt="robotPic"
-          ></img>
           <img
-            id="robotPic"
-            src="https://storyset.com/illustration/chat-bot/pana#FFBD9BFF&hide=&hide=complete"
-            alt="robotPic"
-          ></img> */}
-          <img
-            id="robotPic2"
-            src="./../../public/ChatBot2.png"
-            alt="robotPic2"
+           className="img-bot"
+            src="/bot.png"
+            alt="robot-image"
           ></img>
         </div>
         <div id="faqParagraph">
