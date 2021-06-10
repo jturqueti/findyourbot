@@ -16,6 +16,9 @@ const About = () => {
           <p>
             Final Ironhack projet made with passion and depression on React!
           </p>
+          <br/>
+          And we have used the illustrations from  <a href="https://storyset.com/people">Storyset</a> on this app. 
+         
         </div>
       </div>
     </div>

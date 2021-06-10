@@ -22,7 +22,7 @@ const NavMain = (props) => {
   return (
     <nav className="NavMain">
       <NavLink exact to="/">
-        <h3 className="logo">App name</h3>
+        <h2 className="titre-logo">Find Your Bot</h2>
       </NavLink>
       <ul className="nav-list">
         <li><NavLink to="/solutions">All bots</NavLink></li>
