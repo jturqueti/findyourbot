@@ -68,12 +68,12 @@ class ProspectList extends React.Component {
               <td>{eachSolution.languagesNLP}</td>
              <td>
               <button
-                className="btn btn-secondary"
+                className="btn-gestion"
                 onClick={(e) => this.deleteSolution
                   (eachSolution._id, e)}
                 // onClick={this.deleteSolution}
               >
-                Delete
+                Supprimer
               </button></td>
         
           </tr>
@@ -93,15 +93,13 @@ class ProspectList extends React.Component {
               <td>{eachSolution.languagesNLP}</td>
             <td>
             <button
-                className="btn btn-secondary"
+                className="btn-gestion"
                 onClick={(e) => this.deleteSolution
                   (eachSolution._id, e)}
               >
                 Supprimer
               </button></td>
-              <td>
-              <Link to={`/update/${eachSolution._id}`}>Update</Link>
-            </td>
+            
     
           </tr>
         );
@@ -178,8 +176,8 @@ Espace Admin
         </div>
         </div>
 <div >
-
-        <table className="table">
+<div className="solutions-profile-list prospect-list">
+        <table className="table-prospect">
           <thead >
             <tr>
               <th  scope="col">Nom de la société</th>
@@ -193,6 +191,7 @@ Espace Admin
           </thead>
           <tbody>{this.showSolutions()}</tbody>
         </table>
+        </div>
         </div>
       </div>
      

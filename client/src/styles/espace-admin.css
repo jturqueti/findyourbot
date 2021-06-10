@@ -91,8 +91,11 @@
 .solutions-profile-list{
 	display: flex;
 	justify-content: space-around;
-	
 }
+.prospect-list{
+    padding: 10px;
+}
+
 
     .btn-return{
         color: #0a1d37;
