@@ -4,6 +4,7 @@ import ChannelSelector from "../components/Forms/SelectChannelForm";
 import ClientTypeSelector from "../components/Forms/SelectClientTypeForm";
 import IntegrationSelector from "../components/Forms/SelectIntegrationForm";
 import LanguageSelector from "../components/Forms/SelectLanguageForm";
+import "./../styles/CreateUpdateForms.css"
 
 class CreateSolution extends Component {
   constructor(props) {
@@ -36,23 +37,8 @@ class CreateSolution extends Component {
       companyURL: "",
       logo: "",
     };
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  
-
-  // handleChange = (event) => {
-  //   let { name, value, type } = event.target;
-
-  //   if (type === "checkbox") {
-  //     value = event.target.checked;
-  //   }
-
-  //   this.setState({
-  //         [name]: value,
-  //       });
-  //     };
 // --------------------------------------------------------------------------
       componentDidMount() {
         const id = this.props.match.params.id;
@@ -130,14 +116,10 @@ class CreateSolution extends Component {
           solutionName: this.state.solutionName,
           creationDate: this.state.creationDate,
           originCountry: this.state.originCountry,
-          // channel: this.state.channel.map((el) => el.value),
-          // integration: this.state.integration.map((el) => el.value),
           pricing: this.state.pricing,
           additionalServices: this.state.additionalServices,
           nlpProp: this.state.nlpProp,
           multiLanguages: this.state.multiLanguages,
-          // languagesNLP: this.state.languagesNLP.map((el) => el.value),
-          // clientType: this.state.clientType.map((el) => el.value),
           contactName: this.state.contactName,
           contactEmail: this.state.contactEmail,
           companyURL: this.state.companyURL,
@@ -158,28 +140,28 @@ class CreateSolution extends Component {
 
   render() {  
     return (
-      <div>
+      <div className="CreateUpdateForm">
+        <h1 className="FormTitle">Update a solution : {this.state.solutionName} </h1>
         <form className="Form" onSubmit={this.handleSubmit}>
           <div className="Form__field">
             <label className="Form__label" htmlFor="solutionName">
               Solution Name
             </label>
-            <br></br>
             <input
               type="text"
               name="solutionName"
               id="solutionName"
-              placeholder={this.solutionName}
               className="Form__input"
               value={this.state.solutionName}
               onChange={this.handleChange}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="creationDate">
               Creation Date
             </label>
-            <br></br>
+            
             <input
               type="text"
               name="creationDate"
@@ -189,11 +171,12 @@ class CreateSolution extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="originCountry">
               Country of origin
             </label>
-            <br></br>
+            
             <input
               type="text"
               id="originCountry"
@@ -203,6 +186,7 @@ class CreateSolution extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="channel">
               Channel
@@ -212,6 +196,7 @@ class CreateSolution extends Component {
             onChange={this.getChannels}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="integration">
               Intégration
@@ -221,11 +206,12 @@ class CreateSolution extends Component {
             onChange={this.getIntegrations}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="pricing">
               Pricing
             </label>
-            <br></br>
+            
             <select
               name="pricing"
               id="pricing"
@@ -233,56 +219,59 @@ class CreateSolution extends Component {
               value={this.state.pricing}
               className="Form__input"
             >
+              <option value="select" disabled>Select</option>
               <option value="Gratuit">Gratuit</option>
               <option value="€">€</option>
               <option value="€€">€€</option>
               <option value="€€€">€€€</option>
             </select>
           </div>
-
-          <div className="Form__field">
+          <br></br>
+          <div className="Form__field checkboxForm  ">
             <label className="Form__label" htmlFor="additionalServices">
               Additional Services
             </label>
-            <br></br>
+            
             <input
               type="checkbox"
               name="additionalServices"
               id="additionalServices"
-              className="Form__input"
+              className="Form__input checkboxInput"
               checked={this.state.additionalServices}
               onChange={this.handleChange}
             />
           </div>
-          <div className="Form__field">
+          <br></br>
+          <div className="Form__field checkboxForm">
             <label className="Form__label" htmlFor="nlpProp">
-              nlpProp
+              NLP Propriétaire
             </label>
-            <br></br>
+            
             <input
               type="checkbox"
               name="nlpProp"
               id="nlpProp"
-              className="Form__input"
+              className="Form__input checkboxInput"
               checked={this.state.nlpProp}
               onChange={this.handleChange}
             />
           </div>
-          <div className="Form__field">
+          <br></br>
+          <div className="Form__field checkboxForm">
             <label className="Form__label" htmlFor="multiLanguages">
               MultiLanguages
             </label>
-            <br></br>
+            
             <input
               type="checkbox"
               name="multiLanguages"
               id="multiLanguages"
-              className="Form__input"
+              className="Form__input checkboxInput"
               checked={this.state.multiLanguages}
               onChange={this.handleChange}
             />
           </div>
-
+            <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="languagesNLP">
               Langages supportés par le NLP
@@ -294,6 +283,7 @@ class CreateSolution extends Component {
             />
             
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="clientType">
               Type de client
@@ -303,11 +293,12 @@ class CreateSolution extends Component {
               onChange={this.getClientTypes} 
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="contactName">
               Nom du contact
             </label>
-            <br></br>
+          
             <input
               type="text"
               name="contactName"
@@ -317,11 +308,12 @@ class CreateSolution extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="contactEmail">
               Mail
             </label>
-            <br></br>
+            
             <input
               type="text"
               name="contactEmail"
@@ -331,11 +323,12 @@ class CreateSolution extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="companyURL">
               Lien URL de la société
             </label>
-            <br></br>
+            
             <input
               type="text"
               name="companyURL"
@@ -345,11 +338,12 @@ class CreateSolution extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="logo">
               logo
             </label>
-            <br></br>
+            
             <input
               type="text"
               name="logo"

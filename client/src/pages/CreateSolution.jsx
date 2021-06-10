@@ -4,6 +4,7 @@ import ChannelSelector from "../components/Forms/SelectChannelForm";
 import ClientTypeSelector from "../components/Forms/SelectClientTypeForm";
 import IntegrationSelector from "../components/Forms/SelectIntegrationForm";
 import LanguageSelector from "../components/Forms/SelectLanguageForm";
+import "./../styles/CreateUpdateForms.css";
 
 class CreateSolution extends Component {
   constructor(props) {
@@ -111,115 +112,18 @@ class CreateSolution extends Component {
       .catch((error) => {
         console.log(error);
       });
-
-    // this.setState({
-    //   solutionName: "",
-    //   creationDate: "",
-    //   originCountry: "",
-    //   channel: "",
-    //   integration: "",
-    //   pricing: "",
-    //   additionalServices: false,
-    //   nlpProp: false,
-    //   multiLanguages: false,
-    //   languagesNLP: "",
-    //   clientType: "",
-    //   contactName: "",
-    //   contactEmail: "",
-    //   companyURL: "",
-    //   logo: "",
-    // });
   };
 
-  // state = {
-  //   solutionName: "",
-  //   creationDate: "",
-  //   originCountry: "",
-  //   channel: "",
-  //   integration: "",
-  //   pricing: "",
-  //   additionalServices: false,
-  //   nlpProp: false,
-  //   multiLanguages: false,
-  //   languagesNLP: "",
-  //   clientType: "",
-  //   contactName: "",
-  //   contactEmail: "",
-  //   companyURL: "",
-  //   logo: "",
-  // };
-
-  // handleChange = (event) => {
-  //   let { name, value, type } = event.target;
-
-  //   if (type === "checkbox") {
-  //     value = event.target.checked;
-  //   }
-
-  //   this.setState({
-  //     [name]: value,
-  //   });
-  // };
-
-  // handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   const newSolution = {
-  //     solutionName: this.state.solutionName,
-  //     creationDate: this.state.creationDate,
-  //     originCountry: this.state.originCountry,
-  //     channel: this.state.channel,
-  //     integration: this.state.integration,
-  //     pricing: this.state.pricing,
-  //     additionalServices: this.state.additionalServices,
-  //     nlpProp: this.state.nlpProp,
-  //     multiLanguages: this.state.multiLanguages,
-  //     languagesNLP: this.state.languagesNLP,
-  //     clientType: this.state.clientType,
-  //     contactName: this.state.contactName,
-  //     contactEmail: this.state.contactEmail,
-  //     companyURL: this.state.companyURL,
-  //     logo: this.state.logo,
-  //   };
-
-  //   axios
-  //     .post("http://localhost:5000/api/solutions/", newSolution)
-  //     .then((response) => {
-  //       this.props.history.push("/solutions");
-  //       console.log(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-
-  //     this.setState({
-  //       solutionName: "",
-  //       creationDate: "",
-  //       originCountry: "",
-  //       channel: "",
-  //       integration: "",
-  //       pricing: "",
-  //       additionalServices: false,
-  //       nlpProp: false,
-  //       multiLanguages: false,
-  //       languagesNLP: "",
-  //       clientType: "",
-  //       contactName: "",
-  //       contactEmail: "",
-  //       companyURL: "",
-  //       logo: "",
-  //     });
-
-  // };
+  
   render() {  
     return (
-      <div>
+      <div className="CreateUpdateForm">
+        <h1 className="FormTitle">Add a solution</h1>
         <form className="Form" onSubmit={this.handleSubmit}>
           <div className="Form__field">
             <label className="Form__label" htmlFor="solutionName">
               Solution Name
             </label>
-            <br></br>
             <input
               type="text"
               name="solutionName"
@@ -229,11 +133,12 @@ class CreateSolution extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="creationDate">
               Creation Date
             </label>
-            <br></br>
+            
             <input
               type="text"
               name="creationDate"
@@ -243,11 +148,12 @@ class CreateSolution extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="originCountry">
               Country of origin
             </label>
-            <br></br>
+            
             <input
               type="text"
               id="originCountry"
@@ -257,6 +163,7 @@ class CreateSolution extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="channel">
               Channel
@@ -266,6 +173,7 @@ class CreateSolution extends Component {
             onChange={this.getChannels}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="integration">
               Intégration
@@ -275,11 +183,12 @@ class CreateSolution extends Component {
             onChange={this.getIntegrations}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="pricing">
               Pricing
             </label>
-            <br></br>
+            
             <select
               name="pricing"
               id="pricing"
@@ -294,50 +203,52 @@ class CreateSolution extends Component {
               <option value="€€€">€€€</option>
             </select>
           </div>
-
-          <div className="Form__field">
+          <br></br>
+          <div className="Form__field checkboxForm  ">
             <label className="Form__label" htmlFor="additionalServices">
               Additional Services
             </label>
-            <br></br>
+            
             <input
               type="checkbox"
               name="additionalServices"
               id="additionalServices"
-              className="Form__input"
+              className="Form__input checkboxInput"
               checked={this.state.additionalServices}
               onChange={this.handleChange}
             />
           </div>
-          <div className="Form__field">
+          <br></br>
+          <div className="Form__field checkboxForm">
             <label className="Form__label" htmlFor="nlpProp">
-              nlpProp
+              NLP Propriétaire
             </label>
-            <br></br>
+            
             <input
               type="checkbox"
               name="nlpProp"
               id="nlpProp"
-              className="Form__input"
+              className="Form__input checkboxInput"
               checked={this.state.nlpProp}
               onChange={this.handleChange}
             />
           </div>
-          <div className="Form__field">
+          <br></br>
+          <div className="Form__field checkboxForm">
             <label className="Form__label" htmlFor="multiLanguages">
               MultiLanguages
             </label>
-            <br></br>
+            
             <input
               type="checkbox"
               name="multiLanguages"
               id="multiLanguages"
-              className="Form__input"
+              className="Form__input checkboxInput"
               checked={this.state.multiLanguages}
               onChange={this.handleChange}
             />
           </div>
-
+            <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="languagesNLP">
               Langages supportés par le NLP
@@ -349,6 +260,7 @@ class CreateSolution extends Component {
             />
             
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="clientType">
               Type de client
@@ -358,11 +270,12 @@ class CreateSolution extends Component {
               onChange={this.getClientTypes} 
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="contactName">
               Nom du contact
             </label>
-            <br></br>
+          
             <input
               type="text"
               name="contactName"
@@ -372,11 +285,12 @@ class CreateSolution extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="contactEmail">
               Mail
             </label>
-            <br></br>
+            
             <input
               type="text"
               name="contactEmail"
@@ -386,11 +300,12 @@ class CreateSolution extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="companyURL">
               Lien URL de la société
             </label>
-            <br></br>
+            
             <input
               type="text"
               name="companyURL"
@@ -400,11 +315,12 @@ class CreateSolution extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="logo">
               logo
             </label>
-            <br></br>
+            
             <input
               type="text"
               name="logo"

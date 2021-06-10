@@ -7,22 +7,15 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	/* align-content: center; */
-    /* background-color: #deedf0; */
     background-color: white;
     padding-top: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-/* .SolutionCard > td {
-    width: auto;
-    height:20px;
-} */
-
-.CardLogo {
-    width: 60px;
-    height: 60px;
+.SolutionCard .CardLogo {
+    width: 80px;
+    height: auto;
 }
 
 .CardFlag {
@@ -48,17 +41,14 @@
 
 .row3 {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
 }
 .row2 {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
 }
 .row1 {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
 }
 
