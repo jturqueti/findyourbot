@@ -26,7 +26,7 @@ ul {
 }
 .header{
   height: 110px;
-  font-size: 1.6em;
+  font-size: 1.3em;
 }
 .main{
 min-height: calc(100vh - 90px - 80px);
@@ -34,7 +34,7 @@ min-height: calc(100vh - 90px - 80px);
 
 .footer{
   height: 80px;
-  font-size: 1.6em;
+  font-size: 1.2em;
 }
 
 /* home page */
@@ -65,13 +65,18 @@ min-height: calc(100vh - 90px - 80px);
 }
 
 .img-logo{
-  height: 50px;
+  height: 30px;
   margin: 30px;
 }
 
 .block-home h1{
-  font-size: 3em;
+  font-size: 1.8em;
 }
+
+.block-home h2{
+  font-size: 1.3em;
+}
+
 
 .header-logos, .row{
   display: flex;
@@ -85,8 +90,8 @@ min-height: calc(100vh - 90px - 80px);
 
 .header-logos{
 	flex-direction: row;
-  margin: 50px; 
-  padding: 50px 30px;
+  margin: 30px; 
+  padding: 30px 30px;
 }
 
 .row{
@@ -94,14 +99,14 @@ min-height: calc(100vh - 90px - 80px);
 }
 
 .img-ninja{
-  width: 500px;
+  width: 300px;
   margin: 30px;
 }
 
 .btn-cta-home {
   border-radius: 15px;
   text-decoration: none;
-  padding: 20px 70px;
+  padding: 15px 50px;
   font-size: 1.8em;
   font-weight: bold;
   margin: 20px;

@@ -2,19 +2,23 @@
     background: #654ea3;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right,#fdf6ee, #ffeedb, #ffd8cc);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #fdf6ee, #ffeedb, #ffd8cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    padding: 30px 100px;
+    padding: 10px 100px;
 }
+
 .container-white{
 background-color: white;
 border-radius: 15px;
-padding: 50px;
-margin: 6%;
+padding: 40px;
+margin: 3%;
 }
 
 .titre-info{
     padding-bottom: 10px;
 }
 
+.question-bot{
+    width: 30%;
+}
 
 .btn-cta-lead {
     background-color: #0a1d37;
