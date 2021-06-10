@@ -118,7 +118,7 @@ class CreateProspect extends Component {
           <h2>Channel requis</h2>
          
             <label className="question-client" htmlFor="channel">
-              Où souhaitez-vous que votre bot soit déployé ?
+              Où connecter votre bot ?
             </label>
             <br/>
            
@@ -143,7 +143,7 @@ class CreateProspect extends Component {
           <h2>Budget à disposition</h2>
           
             <label className="question-client"  htmlFor="budget">
-              Quel budget êtes vous prêt à investir ?
+              Quel est votre budget ?
             </label>
             <br/>
             <select
@@ -188,13 +188,14 @@ class CreateProspect extends Component {
 
 
 <div className="container-white">
+  <div className="title-info-browser">
           <h2 className="titre-info">Vos informations</h2>
+          </div>
           <section className="section">
           <div className="blockq question-user">
             <label htmlFor="companyName">
               Nom de votre entreprise
             </label>
-            <br/>
             <input
             
               type="text"
@@ -209,7 +210,7 @@ class CreateProspect extends Component {
             <label  htmlFor="firstName">
               Prénom
             </label>
-            <br/>
+            
             <input
            
               type="text"
@@ -224,7 +225,6 @@ class CreateProspect extends Component {
             <label htmlFor="lastName">
               Nom
             </label>
-            <br/>
             <input
             
               type="text"
@@ -240,7 +240,6 @@ class CreateProspect extends Component {
             <label  htmlFor="email">
               Email professionnel
             </label>
-          <br/>
             <input
               type="text"
               name="email"

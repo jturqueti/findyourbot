@@ -36,6 +36,22 @@ margin: 6%;
     font-size: 1.4em;
 }
 
+.title-info-browser, .question-user{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.question-user{
+    flex-direction: column;
+}
+
+.title-info-browser{
+    flex-direction: row;
+}
+
 .question-bot h2 {
     padding-bottom: 10px;
 }

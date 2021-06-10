@@ -126,7 +126,7 @@ const solutions = [
   },
   {
     solutionName: "Botsify",
-    originCountry: "Pakistan",
+    originCountry: "US",
     channel: [
       "Webchat",
       "Facebook Messenger",
@@ -142,7 +142,7 @@ const solutions = [
   },
   {
     solutionName: "Flow xo",
-    originCountry: "Pakistan",
+    originCountry: "US",
     channel: [
       "Webchat",
       "Facebook Messenger",
@@ -159,7 +159,7 @@ const solutions = [
   },
   {
     solutionName: "Chatfuel",
-    originCountry: "Russia",
+    originCountry: "Russie",
     channel: [
       "Webchat",
       "Facebook Messenger",
