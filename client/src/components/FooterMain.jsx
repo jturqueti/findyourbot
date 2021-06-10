@@ -24,7 +24,6 @@ const FooterMain = (props) => {
       <ul className="nav-list">
         
         <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/contact">Nous Contacter</NavLink></li>
 
         {context.isLoggedIn && (
           <React.Fragment>
@@ -41,7 +40,7 @@ const FooterMain = (props) => {
         {!context.isLoggedIn && (
           <React.Fragment>
             <li>
-              <NavLink to="/signin">Admin Log in</NavLink>
+              <NavLink to="/signin">Admin</NavLink>
             </li>
           </React.Fragment>
         )}
