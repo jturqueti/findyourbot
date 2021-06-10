@@ -26,15 +26,9 @@ class Profile extends React.Component {
         });
   }
 
-  // deleteSolution(index) {
-  //   this.setState({
-  //    solutions: this.state.solutions.filter((c, i) => i !== index)
-  //   });
-  // }
-
   deleteSolution(id, e) {
     axios
-      .delete('http://localhost:5000/api/solutions/' + id)
+      .delete(process.env.REACT_APP_BACKEND_URL + '/api/solutions/' + id)
       .then((response) => {
         this.setState({
         solutions: this.state.solutions.filter((item) => item._id !== id)

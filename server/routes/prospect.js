@@ -22,7 +22,6 @@ ProspectModel.findById(req.params.id)
 
 router.post("/",  (req, res, next) => {
   console.log(req.body)
-  console.log("héhéh")
     const newProspect = { ...req.body };
     ProspectModel.create(newProspect)
         .then((infoprospect) => {
@@ -39,7 +38,6 @@ router.post("/",  (req, res, next) => {
 
 router.post("/", (req, res, next) => {
   console.log(req.body);
-  console.log("lalala")
   console.log(req.body.channel);
   SolutionModel.find({channel: req.body.channel,  budget: req.body.budget, clientType: req.body.clientType})
   .then((solutionFromDB) => {

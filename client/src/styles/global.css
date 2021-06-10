@@ -36,3 +36,27 @@ min-height: calc(100vh - 90px - 80px);
   height: 80px;
   font-size: 1.6em;
 }
+
+/* home page */
+
+.container-blocks-home{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.block-home{
+  height: 75vh;
+  width: 50%;
+}
+
+.block1{
+  background-color: white;
+}
+
+.block-home h1{
+  font-size: 3em;
+}
