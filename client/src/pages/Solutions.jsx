@@ -130,7 +130,8 @@ class Solutions extends Component {
 Solutions référencées          
         </h1>
         <div id="send-btn-browser">
-  <button  className="btn-cta-find">Trouver ma solution</button>
+  <Link className="btn-cta-find" to={'/browser'}>Trouver la bonne solution</Link>
+
   </div>
         </div>
         <div className="searchbar">

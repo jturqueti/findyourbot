@@ -79,7 +79,7 @@ class Home extends React.Component {
             alt="logo-clustaar"
           ></img>
           <div className="btn-home">
-          <Link className="btn-cta-home btn-pink" to={'/solutions'}>Démarrer</Link>
+          <Link className="btn-cta-home btn-pink" to={'/browser'}>Démarrer</Link>
           </div>
           </div>
       </div>
