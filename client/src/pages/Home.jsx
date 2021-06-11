@@ -65,7 +65,7 @@ class Home extends React.Component {
 
 
         <div className="btn-home">
-          <Link className="btn-cta-home btn-blue" to={'/solutions'}>Let's go!</Link>
+          <Link className="btn-cta-home btn-blue" to={'/solutions'}>Parcourir</Link>
           
           </div>
         </div>
@@ -79,7 +79,7 @@ class Home extends React.Component {
             alt="logo-clustaar"
           ></img>
           <div className="btn-home">
-          <Link className="btn-cta-home btn-pink" to={'/solutions'}>Let's go!</Link>
+          <Link className="btn-cta-home btn-pink" to={'/solutions'}>Démarrer</Link>
           </div>
           </div>
       </div>
