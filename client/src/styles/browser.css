@@ -83,6 +83,23 @@ h2{
     font-size: 1.8em;
 }
 
+.btn-cta-find{
+    background-color: #0a1d37;
+    border-radius: 10px;
+    box-shadow: 8px 8px 0 #ffeedb;
+    color: white;
+    text-decoration: none;
+    padding: 6px 20px;
+    font-size: 1em;
+    font-weight: bold;
+  margin-left: 20px;
+    border: none;
+  }
+
+  .btn-cta-find:hover{
+    background-color: #ffbd9b;
+}
+
 /* .question-user{
 
 }

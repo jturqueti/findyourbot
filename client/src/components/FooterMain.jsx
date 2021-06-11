@@ -24,7 +24,7 @@ const FooterMain = (props) => {
       <ul className="nav-footer">
         
         <li><NavLink to="/about">About</NavLink></li>
-
+        <li><NavLink to="/faq">Comment faire ses recherches ?</NavLink></li>
         {context.isLoggedIn && (
           <React.Fragment>
             <li>

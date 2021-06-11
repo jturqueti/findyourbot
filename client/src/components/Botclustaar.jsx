@@ -55,7 +55,7 @@ export default class Botclustaar extends Component {
   render() {
     return (
       <div>
-        <p>youyou</p>
+        <p></p>
       </div>
     );
   }

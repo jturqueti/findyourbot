@@ -141,11 +141,11 @@ class CreateSolution extends Component {
   render() {  
     return (
       <div className="CreateUpdateForm">
-        <h1 className="FormTitle">Update a solution : {this.state.solutionName} </h1>
+        <h1 className="FormTitle"><span className="solution-name-pink">Mise à jour | </span>{this.state.solutionName}</h1>
         <form className="Form" onSubmit={this.handleSubmit}>
           <div className="Form__field">
             <label className="Form__label" htmlFor="solutionName">
-              Solution Name
+              Nom de la solution
             </label>
             <input
               type="text"
@@ -159,7 +159,7 @@ class CreateSolution extends Component {
           <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="creationDate">
-              Creation Date
+              Date de création de la société
             </label>
             
             <input
@@ -174,7 +174,7 @@ class CreateSolution extends Component {
           <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="originCountry">
-              Country of origin
+              Pays d'origine
             </label>
             
             <input
@@ -189,7 +189,7 @@ class CreateSolution extends Component {
           <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="channel">
-              Channel
+              Channel(s)
             </label>
             <ChannelSelector 
             defaultValue={this.state.channel}
@@ -199,7 +199,7 @@ class CreateSolution extends Component {
           <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="integration">
-              Intégration
+              Intégration(s)
             </label>
             <IntegrationSelector
             defaultValue={this.state.integration}
@@ -229,7 +229,7 @@ class CreateSolution extends Component {
           <br></br>
           <div className="Form__field checkboxForm  ">
             <label className="Form__label" htmlFor="additionalServices">
-              Additional Services
+              Services additionnels ?
             </label>
             
             <input
@@ -244,7 +244,7 @@ class CreateSolution extends Component {
           <br></br>
           <div className="Form__field checkboxForm">
             <label className="Form__label" htmlFor="nlpProp">
-              NLP Propriétaire
+              NLP Propriétaire ?
             </label>
             
             <input
@@ -259,7 +259,7 @@ class CreateSolution extends Component {
           <br></br>
           <div className="Form__field checkboxForm">
             <label className="Form__label" htmlFor="multiLanguages">
-              MultiLanguages
+              MultiLanguages possible ?
             </label>
             
             <input
@@ -296,7 +296,7 @@ class CreateSolution extends Component {
           <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="contactName">
-              Nom du contact
+              Nom du contact référent
             </label>
           
             <input
@@ -311,7 +311,7 @@ class CreateSolution extends Component {
           <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="contactEmail">
-              Mail
+              Email du contact
             </label>
             
             <input
@@ -326,7 +326,7 @@ class CreateSolution extends Component {
           <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="companyURL">
-              Lien URL de la société
+             URL du site
             </label>
             
             <input
@@ -341,7 +341,7 @@ class CreateSolution extends Component {
           <br></br>
           <div className="Form__field">
             <label className="Form__label" htmlFor="logo">
-              logo
+              Modifier l'URL de l'image du logo
             </label>
             
             <input
@@ -354,7 +354,7 @@ class CreateSolution extends Component {
             />
           </div>
           <br></br>
-          <button>Submit</button>
+          <button className="btn-return" >Envoyer</button>
         </form>
       </div>
     );

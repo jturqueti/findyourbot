@@ -129,6 +129,9 @@ class Solutions extends Component {
         <h1>
 Solutions référencées          
         </h1>
+        <div id="send-btn-browser">
+  <button  className="btn-cta-find">Trouver ma solution</button>
+  </div>
         </div>
         <div className="searchbar">
 <p>Rechercher par nom de société: </p>
