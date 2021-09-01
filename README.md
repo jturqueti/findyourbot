@@ -1,5 +1,5 @@
 Final <a href="https://www.ironhack.com/fr/developpement-web/paris">Ironhack</a> project made by <b>Olivier Babiard and Julia Turqueti in 1 week</b>.
-<br>With this project we have passed the RNCP (lv.6) degree (French Certification for a Junior Developer). 
+<br>With this project we have finished the RNCP (lv.6) degree (French Certification for a Junior Developer). 
 <br>🤖 This first prototype was made in order to create a chatbots' solution comparator, helping companies finding the right solution!
 <br>
 <br>This first version has been deployed on Heroku: 
