@@ -22,20 +22,20 @@ Final <a href="https://www.ironhack.com/fr/developpement-web/paris">Ironhack</a>
 <li> Update the solutions' informations, they are not correct at the moment 🤫</li>
 </ul>
 <br>
-<b>Final Project Technical Requirements:</b>
+<b>IronHack requirements for our project:</b>
 <ul>
-<li> Use React for all of the user-facing parts of your application. </li>
-<li> Use Express for your API backend that your React app will communicate with. </li>
-<li> Use Mongoose for models and database communication.</li>
-<li> Have 3 models or more.</li>
-<li> Having one for users is a no-brainer.</li>
-<li> The other two should represent the main functionality of your app.</li>
-<li> Include sign up, log in & log out functionality with encrypted passwords (or social logins) and authorization (logged in users can do extra things).</li>
-<li> Have at least 1 commit per day that you worked on it.</li>
-<li> Be deployed online using Heroku, so anybody could use your app.</li>
-<li> Responsive design is not a requirement.</li>
+<li> Use React for all of the user-facing parts of your application </li>
+<li> Use Express for your API backend that your React app will communicate with </li>
+<li> Use Mongoose for models and database communication</li>
+<li> Have 3 datamodels or more</li>
+<li> Having one for users is a no-brainer</li>
+<li> The other two should represent the main functionality of your app</li>
+<li> Include sign up, log in & log out functionality with encrypted passwords (or social logins) and authorization (logged in users can do extra things)</li>
+<li> Have at least 1 commit per day that you worked on it</li>
+<li> Be deployed online using Heroku, so anybody could use your app</li>
+<li> Responsive design is not a requirement</li>
 </ul>
 <b>
-<br>We had the chance to be selected for the IronShow 🥳
-<br>We truly enjoy working together and we have great memories of this project! 💟
+<br>We were selected for the IronShow (3 best project in our course) 🥳
+<br>We truly enjoyed working together and we have great memories of this project! 💟
 </b>
