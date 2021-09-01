@@ -1,6 +1,6 @@
 Final <a href="https://www.ironhack.com/fr/developpement-web/paris">Ironhack</a> project made by <b>Olivier Babiard and Julia Turqueti in 1 week</b>.
-<br>With this project we have finished the RNCP (lv.6) degree (French Certification for a Junior Developer). 
-<br>🤖 This first prototype was made in order to create a chatbots' solution comparator, helping companies finding the right solution!
+<br>We created this as the capstone project for the RNCP (lv.6) degree (French Certification for a Junior Developer). 
+<br>🤖 This first prototype was made in order to create a chatbot's solution comparator, helping companies to find the right solution!
 <br>
 <br>This first version has been deployed on Heroku: 
 <br> 👉 https://findyourbot.herokuapp.com/ (it could take up to 30 seconds to load the page).
