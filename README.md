@@ -4,6 +4,7 @@ Final <a href="https://www.ironhack.com/fr/developpement-web/paris">Ironhack</a>
 <br>
 <br>This first version has been deployed on Heroku: 
 <br> 👉 https://findyourbot.herokuapp.com/ (it could take up to 30 seconds to load the page).
+<br> 🔥 Or... Watch 1-minute video for a demo <a href="https://www.loom.com/share/024c0676e38144148e70f753ea8cfb7c">Watch 1-minute video for a demo</a>
 
 <b>Our main features:</b>
 <ul>
