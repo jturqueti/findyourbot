@@ -36,6 +36,6 @@ Final <a href="https://www.ironhack.com/fr/developpement-web/paris">Ironhack</a>
 <li> Responsive design is not a requirement</li>
 </ul>
 <b>
-<br>We were selected for the IronShow (3 best project in our course) 🥳
+<br>We were selected for the IronShow (3 best projects in our course) 🥳
 <br>We truly enjoyed working together and we have great memories of this project! 💟
 </b>
